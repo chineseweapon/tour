@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>合肥到天津三天两晚旅游攻略</title>
+    <title>合肥到天津亲友接驳版旅游攻略</title>
     <style>
       :root {
         --ink: #16212f;
@@ -39,6 +39,24 @@
 
       a {
         color: inherit;
+      }
+
+      .poi-link {
+        color: var(--teal);
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      .restaurant .poi-link,
+      .route-card .poi-link,
+      .hotel-card .poi-link {
+        word-break: break-word;
+      }
+
+      .hero .poi-link {
+        color: #fff;
       }
 
       img {
@@ -125,6 +143,44 @@
       main {
         width: min(1180px, calc(100% - 40px));
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main > section:nth-of-type(4) {
+        order: 1;
+      }
+
+      main > section:nth-of-type(5) {
+        order: 2;
+      }
+
+      main > section:nth-of-type(6) {
+        order: 3;
+      }
+
+      main > section:nth-of-type(1) {
+        order: 4;
+      }
+
+      main > section:nth-of-type(2) {
+        order: 5;
+      }
+
+      main > section:nth-of-type(3) {
+        order: 6;
+      }
+
+      main > section:nth-of-type(7) {
+        order: 7;
+      }
+
+      main > section:nth-of-type(8) {
+        order: 8;
+      }
+
+      main > footer {
+        order: 9;
       }
 
       section {
@@ -171,7 +227,7 @@
       }
 
       .train-grid {
-        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .route-grid {
@@ -179,7 +235,7 @@
       }
 
       .hotel-grid {
-        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-columns: 1fr;
       }
 
       .spot-grid {
@@ -278,6 +334,87 @@
       .hotel-card.primary {
         background: #fdf7eb;
         border-color: #d7b77c;
+      }
+
+      .hotel-feature-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .hotel-photo {
+        position: relative;
+        min-height: 390px;
+        background: #0f1d2b;
+      }
+
+      .hotel-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(8, 18, 28, 0.02),
+          rgba(8, 18, 28, 0.38)
+        );
+        pointer-events: none;
+      }
+
+      .hotel-photo figcaption {
+        position: absolute;
+        left: 18px;
+        bottom: 16px;
+        z-index: 1;
+        margin: 0;
+        padding: 6px 10px;
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(8, 18, 28, 0.56);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 999px;
+        backdrop-filter: blur(8px);
+      }
+
+      .hotel-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .hotel-copy p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .hotel-highlights {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hotel-highlights li {
+        margin: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .hotel-highlights strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-size: 15px;
+      }
+
+      .hotel-highlights span {
+        display: block;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
       }
 
       .train-card,
@@ -534,6 +671,10 @@
         .food-grid {
           grid-template-columns: 1fr;
         }
+
+        .hotel-feature-card {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 680px) {
@@ -618,6 +759,18 @@
         .crosstalk-card,
         .tip-box {
           padding: 18px;
+        }
+
+        .hotel-feature-card {
+          padding: 0;
+        }
+
+        .hotel-photo {
+          min-height: 250px;
+        }
+
+        .hotel-copy {
+          padding: 20px;
         }
 
         .route-card {
@@ -712,23 +865,25 @@
   <body>
     <header class="hero">
       <div class="hero-inner">
-        <div class="eyebrow">合肥出发 · 天津站下车 · 三天两晚</div>
+        <div class="eyebrow">合肥出发 · G680 傍晚进津 · 亲友接驳版</div>
         <h1>合肥到天津，住在天津站边上的海河城市假期</h1>
         <p>
-          以天津站和津湾广场为落点，第一晚把海河夜景吃透，第二天去滨海看航母和海上故宫，第三天回到五大道慢慢看洋楼、赏花、吃津菜。
+          以 G680 18:30 到天津西为起点，第一晚先吃天津菜再看海河夜景，第二天把意风区、五大道和相声串起来，第三天亲友开车送到滨海航母乐园，第四天预约国家海洋博物馆，晚上回市区吃罾蹦鲤鱼，最后住到天津南站旁边方便返程。
         </p>
         <div class="hero-meta">
           <div class="meta-item">
             <b>住宿核心</b>
-            <span>天津站、津湾广场、海河东路一带，双床房约 500 元上下。</span>
+            <span>前两晚住天津站、津湾广场附近；返程前一晚住
+              <a class="poi-link" href="https://m.dianping.com/search/keyword/10/0_天津南站鹏瑞利明宇丽雅酒店" target="_blank" rel="noreferrer">天津南站鹏瑞利明宇丽雅酒店</a>
+              。</span>
           </div>
           <div class="meta-item">
             <b>游玩节奏</b>
-            <span>市区步行多，滨海单独放一天，夜景放到第一晚最顺。</span>
+            <span>市区步行多，滨海两天靠亲友开车接送，节假日航母烟花单独关注。</span>
           </div>
           <div class="meta-item">
             <b>交通提醒</b>
-            <span>优先选 T242/T243，合肥站 17:29 发，次日凌晨到天津站。</span>
+            <span>最推荐 G680，14:12 出发、18:30 到天津西，正好接晚饭和夜景。</span>
           </div>
           <div class="meta-item">
             <b>订票重点</b>
@@ -742,202 +897,11 @@
       <section>
         <div class="section-head">
           <div>
-            <div class="section-kicker">01 · 先定大本营</div>
-            <h2>酒店选天津站附近，第一晚少折腾</h2>
-          </div>
-          <p class="section-note">
-            你的景点里，津湾广场、解放桥、意风区、海河游船都围绕天津站和海河，住这里最省时间。
-          </p>
-        </div>
-
-        <div class="hotel-grid">
-          <article class="hotel-card primary">
-            <div class="day-label">主推</div>
-            <h3>天津天津站希尔顿欢朋酒店</h3>
-            <p>
-              地址在河北区海河东路 78 号，官网标注距离天津火车站、津湾广场站不到一公里，适合双床、含早、行李寄存和晚归夜景路线。
-            </p>
-            <span class="price">参考：双床约 500 元上下，节假日会浮动</span>
-            <ul>
-              <li>适合人群：两人双床、想住新一些、希望早餐省心。</li>
-              <li>出站动线：天津站出站后可步行或短途打车到酒店，放行李后直接过海河去津湾广场。</li>
-              <li>订房筛选：2 张单人床、可取消、含早、离天津站 1 公里内。</li>
-            </ul>
-          </article>
-
-          <article class="hotel-card">
-            <div class="day-label">备选</div>
-            <h3>宜必思、如家商旅、亚朵津湾广场一带</h3>
-            <p>
-              如果实际入住日希尔顿欢朋涨价，可在津湾广场站、天津站、意风区之间找连锁双床房。预算低一些可以看宜必思和如家商旅，想均衡舒适可看亚朵或桔子。
-            </p>
-            <ul>
-              <li>优先范围：天津站南广场、津湾广场站、海河东路。</li>
-              <li>避坑：滨海新区不要作为全程住宿，回市区夜景和美食会费时间。</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">02 · 火车与抵达</div>
-            <h2>具体车次优先选 T242/T243，到天津站下车</h2>
-          </div>
-          <p class="section-note">
-            这趟车最符合“天津站下车”的设定，但凌晨到站，酒店要按前一晚安排。
-          </p>
-        </div>
-
-        <div class="train-grid">
-          <article class="train-card primary">
-            <div class="day-label">主推车次</div>
-            <h3>T242/T243 合肥站 → 天津站</h3>
-            <div class="train-line">
-              <div class="station">
-                <span>合肥站出发</span>
-                <strong>17:29</strong>
-              </div>
-              <div class="rail-arrow">→</div>
-              <div class="station">
-                <span>天津站到达</span>
-                <strong>次日约 04:03</strong>
-              </div>
-            </div>
-            <p>
-              车次到天津后变为 T243，适合严格要求在天津站下车、酒店也订在天津站附近的行程。具体发车、到站和余票以 12306 当日查询为准。
-            </p>
-            <a
-              class="action-link"
-              href="https://www.12306.cn/index/index.html"
-              target="_blank"
-              rel="noreferrer"
-            >打开 12306 查询</a>
-          </article>
-
-          <article class="train-card">
-            <div class="day-label">凌晨到站处理</div>
-            <h3>不要把第一晚酒店省掉</h3>
-            <ul class="detail-list">
-              <li>订酒店时把入住日期定为出发当天晚上，提前备注凌晨到店。</li>
-              <li>到天津站后步行或短途打车到酒店，先洗漱补觉，上午再开始正式游玩。</li>
-              <li>若想白天到达，可改查合肥南到天津西或天津南的高铁，再地铁/打车到天津站酒店。</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">03 · 三天两晚动线</div>
-            <h2>按天津站落地设计，不走回头路</h2>
-          </div>
-          <p class="section-note">
-            若到达时间较晚，把意风区和海河夜游保留，包子和津湾散步可以压缩。
-          </p>
-        </div>
-
-        <div class="route-grid">
-          <article class="route-card">
-            <div>
-              <div class="day-label">Day 1</div>
-              <h3>天津站 · 津湾广场 · 意风区 · 海河夜游</h3>
-              <ul>
-                <li>凌晨：T242/T243 到天津站，入住已提前订好的天津站附近酒店，补觉后出门。</li>
-                <li>傍晚：步行到津湾广场、解放桥、世纪钟拍照。</li>
-                <li>晚餐：张记包子或狗不理浅尝，别吃太撑。</li>
-                <li>晚上：津湾码头或天津站码头坐海河夜游，看解放桥、意风区、天津之眼灯光。</li>
-                <li>相声替换方案：若买到德云社或葫芦相声社夜场，可压缩意风区散步，保留海河夜景。</li>
-              </ul>
-            </div>
-            <figure class="route-map">
-              <img
-                src="assets/day1-route-map.svg"
-                alt="Day 1 天津站、津湾广场、意风区、海河夜游路线地图"
-              />
-            </figure>
-            <a
-              class="map-link"
-              href="https://map.baidu.com/search/天津站%20津湾广场%20解放桥%20世纪钟%20意大利风情区%20津湾码头"
-              target="_blank"
-              rel="noreferrer"
-            >打开百度地图路线</a>
-            <div class="tag-row">
-              <span class="tag">步行为主</span>
-              <span class="tag">夜景重点</span>
-            </div>
-          </article>
-
-          <article class="route-card">
-            <div>
-              <div class="day-label">Day 2</div>
-              <h3>滨海新区 · 航母乐园 · 国家海洋博物馆</h3>
-              <ul>
-                <li>上午：从天津站出发去滨海，优先国家海洋博物馆预约时段。</li>
-                <li>中午：在滨海简单用餐，给两个大景点留足时间。</li>
-                <li>下午：泰达航母主题公园，看“基辅号”和军事主题展演。</li>
-                <li>晚上：滨海可吃小满海鲜皮皮虾锅贴；回市区后若有体力，再安排天津之眼或利德顺小老饭庄吃牛窝骨。</li>
-                <li>相声替换方案：回市区后若赶夜场相声，天津之眼改为只拍外景或顺延到 Day 1 夜游沿线远观。</li>
-              </ul>
-            </div>
-            <figure class="route-map">
-              <img
-                src="assets/day2-route-map.svg"
-                alt="Day 2 天津站、国家海洋博物馆、泰达航母、小满海鲜、回市区路线地图"
-              />
-            </figure>
-            <a
-              class="map-link"
-              href="https://map.baidu.com/search/天津站%20国家海洋博物馆%20泰达航母主题公园%20小满海鲜皮皮虾锅贴%20天津站"
-              target="_blank"
-              rel="noreferrer"
-            >打开百度地图路线</a>
-            <div class="tag-row">
-              <span class="tag">建议早出发</span>
-              <span class="tag">滨海单独一天</span>
-            </div>
-          </article>
-
-          <article class="route-card">
-            <div>
-              <div class="day-label">Day 3</div>
-              <h3>五大道 · 民园广场 · 桂园津菜 · 返程</h3>
-              <ul>
-                <li>上午：民园广场、重庆道、成都道、睦南道慢走看建筑和花。</li>
-                <li>中午：桂园餐厅吃八珍豆腐，想加硬菜可点罾蹦鲤鱼。</li>
-                <li>下午：回酒店取行李，天津站返程；若车在天津西或天津南，提前预留地铁时间。</li>
-              </ul>
-            </div>
-            <figure class="route-map">
-              <img
-                src="assets/day3-route-map.svg"
-                alt="Day 3 天津站、民园广场、五大道、桂园餐厅、天津站返程路线地图"
-              />
-            </figure>
-            <a
-              class="map-link"
-              href="https://map.baidu.com/search/天津站%20民园广场%20五大道%20桂园餐厅%20天津站"
-              target="_blank"
-              rel="noreferrer"
-            >打开百度地图路线</a>
-            <div class="tag-row">
-              <span class="tag">适合拍照</span>
-              <span class="tag">午餐重头戏</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-head">
-          <div>
             <div class="section-kicker">04 · 景点图文</div>
             <h2>必去景点逐个安排</h2>
           </div>
           <p class="section-note">
-            市区景点适合夜景和 City Walk，滨海景点距离市区远，建议合并成一整天。
+            市区景点适合夜景和 City Walk；滨海这版拆成航母乐园和国家海洋博物馆两天，靠亲友开车接送更舒服。
           </p>
         </div>
 
@@ -1132,7 +1096,9 @@
             </p>
             <ul class="detail-list">
               <li>适合：第一次来天津，想看更有名气的相声班底。</li>
-              <li>搭配：Day 1 海河夜游前后，或 Day 2 滨海回市区后。</li>
+              <li>搭配：Day 2
+                <a class="poi-link" href="https://m.dianping.com/shop/536123" target="_blank" rel="noreferrer">桂园餐厅</a>
+                晚饭后，或把海河夜游改到 Day 1 前半场后再去听。</li>
             </ul>
             <a
               class="action-link"
@@ -1194,7 +1160,7 @@
             <h2>每道菜匹配顺路餐馆</h2>
           </div>
           <p class="section-note">
-            天津菜分量普遍大，双人建议每顿 2 到 3 个菜就够。热门店饭点排队，尽量错峰。
+            天津菜分量普遍大，双人建议每顿 2 到 3 个菜就够。餐馆名都做成大众点评移动链接，微信里点开后优先进入点评页。
           </p>
         </div>
 
@@ -1212,7 +1178,12 @@
                 外酥里嫩的豆腐裹上海鲜和浓芡，最适合作为五大道午餐主菜。
               </p>
               <div class="restaurant">
-                桂园餐厅，五大道店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/536123"
+                  target="_blank"
+                  rel="noreferrer"
+                >桂园餐厅(五大道店)</a>
                 <span class="nearby">
                   成都道 62 号，靠近民园广场；高德 2025 美食榜把它列为津菜代表，Trip.com 页面也把八珍豆腐列为热门餐点。
                 </span>
@@ -1233,9 +1204,14 @@
                 红烧牛窝骨吃的是胶质和软糯口感，口味偏浓，适合配米饭。
               </p>
               <div class="restaurant">
-                利德顺小老饭庄，复兴路店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/1900615"
+                  target="_blank"
+                  rel="noreferrer"
+                >利德顺小老饭庄(复兴路店)</a>
                 <span class="nearby">
-                  适合天津之眼、古文化街、西北角一带之后打车前往；红烧牛窝骨是高频推荐菜。
+                  G680 到天津西后先打车约 1.2km 来吃最顺；红烧牛窝骨是高频推荐菜。
                 </span>
               </div>
             </div>
@@ -1254,9 +1230,14 @@
                 这道菜讲究整鱼炸到外酥内嫩，再浇酸甜汁，是很有辨识度的津菜功夫菜。
               </p>
               <div class="restaurant">
-                红旗饭庄，河西店或红桥店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/534610"
+                  target="_blank"
+                  rel="noreferrer"
+                >红旗饭庄</a>
                 <span class="nearby">
-                  河西店近乐园道地铁站，适合五大道后打车；红桥店更适合天津之眼、古文化街一线。
+                  第四晚从滨海回市区后专门安排这一顿；罾蹦鲤鱼建议提前电话或平台确认是否供应。
                 </span>
               </div>
             </div>
@@ -1275,7 +1256,12 @@
                 糯米皮炸到金黄，里面是豆沙馅，甜口小吃适合当古文化街、天津之眼一线的加餐。
               </p>
               <div class="restaurant">
-                耳朵眼炸糕，东北角店或大胡同店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/search/keyword/10/0_耳朵眼炸糕东北角店"
+                  target="_blank"
+                  rel="noreferrer"
+                >耳朵眼炸糕(东北角店)</a>
                 <span class="nearby">
                   靠近古文化街、鼓楼和天津之眼片区，建议现买现吃，外皮口感最好。
                 </span>
@@ -1296,9 +1282,14 @@
                 比普通锅贴更海味，重点吃焦脆底和整只皮皮虾馅，适合安排在滨海新区那一天。
               </p>
               <div class="restaurant">
-                小满海鲜·皮皮虾锅贴王，福建北路店或鼓楼店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/search/keyword/10/0_小满海鲜皮皮虾锅贴王福建北路店"
+                  target="_blank"
+                  rel="noreferrer"
+                >小满海鲜·皮皮虾锅贴王(福建北路店)</a>
                 <span class="nearby">
-                  福建北路店适合国家海洋博物馆、航母乐园后前往；鼓楼店更适合古文化街、天津之眼周边。
+                  福建北路店适合国家海洋博物馆、航母乐园后前往；如果市区临时想吃，再搜鼓楼店。
                 </span>
               </div>
             </div>
@@ -1317,9 +1308,14 @@
                 早上吃最对味，绿豆面、鸡蛋、果子或果篦儿、酱料是灵魂。
               </p>
               <div class="restaurant">
-                老龙头煎饼果子，天津站店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/search/keyword/10/0_老龙头煎饼果子天津站店"
+                  target="_blank"
+                  rel="noreferrer"
+                >老龙头煎饼果子(天津站店)</a>
                 <span class="nearby">
-                  适合 Day 1 到达后或 Day 3 返程前当早餐，离天津站动线最顺。
+                  可作为市区早餐备选；若当天先吃张记包子，就把煎饼果子留作路上加餐。
                 </span>
               </div>
             </div>
@@ -1338,9 +1334,14 @@
                 名气大于性价比，但第一次来天津可以少量尝试。建议点传统猪肉包或三鲜包，不必点太多。
               </p>
               <div class="restaurant">
-                狗不理，山东路总店或水上旗舰店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/9333337"
+                  target="_blank"
+                  rel="noreferrer"
+                >狗不理(天津·海河意式风情区店)</a>
                 <span class="nearby">
-                  山东路总店更接近和平路、津湾广场一带；水上旗舰店更适合去水上公园方向时顺路。
+                  放在 Day 2 意风区中午浅尝最顺路；名气大，建议少量点来打卡。
                 </span>
               </div>
             </div>
@@ -1359,9 +1360,14 @@
                 更接近天津人的日常早餐和简餐。重点吃三鲜包，搭配小米粥或云吞。
               </p>
               <div class="restaurant">
-                津门张记包子铺，华昌道店
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/4177561"
+                  target="_blank"
+                  rel="noreferrer"
+                >津门张记包子铺(丰业里店)</a>
                 <span class="nearby">
-                  在天津站、意风区、古文化街片区可顺路；早上到 14:00 左右营业，适合早餐或早午餐。
+                  Day 2 早上从天津站/津湾广场附近酒店出发很顺；适合早餐或早午餐。
                 </span>
               </div>
             </div>
@@ -1372,8 +1378,357 @@
       <section>
         <div class="section-head">
           <div>
+            <div class="section-kicker">01 · 每天路线</div>
+            <h2>按 18:30 到天津西重新排，吃饭和住宿都顺路</h2>
+          </div>
+          <p class="section-note">
+            这版把市区、滨海和返程分开：前两天住市区，第三天住滨海，第四晚住天津南站，第二天早上直接上车。
+          </p>
+        </div>
+
+        <div class="route-grid">
+          <article class="route-card">
+            <div>
+              <div class="day-label">Day 1</div>
+              <h3>18:30 天津西 · 利德顺晚饭 · 海河夜景</h3>
+              <ul>
+                <li>18:30：G680 到天津西后先打车约 1.2km 去
+                  <a class="poi-link" href="https://m.dianping.com/shop/1900615" target="_blank" rel="noreferrer">利德顺小老饭庄(复兴路店)</a>
+                  ，第一顿直接吃牛窝骨和天津家常菜。</li>
+                <li>饭后：去市区酒店办理入住，优先天津站、津湾广场、意风区附近双床房。</li>
+                <li>晚上：顺着海河溜达到津湾广场、解放桥看灯光；体力够就从津湾码头或天津站码头坐海河夜游。</li>
+              </ul>
+            </div>
+            <figure class="route-map">
+              <img
+                src="assets/day1-route-map.svg"
+                alt="Day 1 天津西、利德顺小老饭庄、市区酒店、津湾广场、海河游船路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/天津西站%20利德顺小老饭庄复兴路店%20天津站%20津湾广场%20海河游船"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
+            <div class="tag-row">
+              <span class="tag">晚饭优先</span>
+              <span class="tag">夜景可散步可游船</span>
+            </div>
+          </article>
+
+          <article class="route-card">
+            <div>
+              <div class="day-label">Day 2</div>
+              <h3>张记包子 · 意风区 · 五大道 · 相声夜场</h3>
+              <ul>
+                <li>早上：酒店附近吃
+                  <a class="poi-link" href="https://m.dianping.com/shop/4177561" target="_blank" rel="noreferrer">津门张记包子铺(丰业里店)</a>
+                  ，三鲜包配粥最稳。</li>
+                <li>上午：步行去意大利风情街，慢看街区和老建筑。</li>
+                <li>中午：在意风区补天津小吃，少量尝
+                  <a class="poi-link" href="https://m.dianping.com/shop/9333337" target="_blank" rel="noreferrer">狗不理(天津·海河意式风情区店)</a>
+                  。</li>
+                <li>下午：去民园广场和五大道，看历史建筑、赏花、拍照。</li>
+                <li>晚上：到
+                  <a class="poi-link" href="https://m.dianping.com/shop/536123" target="_blank" rel="noreferrer">桂园餐厅(五大道店)</a>
+                  吃八珍豆腐；饭后去预约好的德云社、葫芦相声社或古文化街相声馆。</li>
+              </ul>
+            </div>
+            <figure class="route-map">
+              <img
+                src="assets/day2-route-map.svg"
+                alt="Day 2 津门张记包子铺、意大利风情街、狗不理意风区店、五大道、桂园餐厅、相声夜场路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/津门张记包子铺丰业里店%20意大利风情街%20狗不理天津海河意式风情区店%20民园广场%20桂园餐厅五大道店"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
+            <div class="tag-row">
+              <span class="tag">市区步行</span>
+              <span class="tag">相声提前订</span>
+            </div>
+          </article>
+
+          <article class="route-card">
+            <div>
+              <div class="day-label">Day 3</div>
+              <h3>退房 · 亲友开车去滨海 · 泰达航母乐园</h3>
+              <ul>
+                <li>一早：市区酒店退房，亲友开车送去天津滨海新区，市区到泰达航母主题公园约 70km。</li>
+                <li>白天：泰达航母主题公园玩一整天，看航母、军事主题展演和园区活动。</li>
+                <li>晚上：节假日提前查是否有烟花秀；玩完后住
+                  <a class="poi-link" href="https://m.dianping.com/search/keyword/10/0_泰达航母主题公园附近民宿" target="_blank" rel="noreferrer">滨海附近民宿</a>
+                  或公寓，第二天去海博馆更轻松。</li>
+              </ul>
+            </div>
+            <figure class="route-map">
+              <img
+                src="assets/day3-route-map.svg"
+                alt="Day 3 市区酒店、泰达航母主题公园、滨海民宿路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/天津站%20泰达航母主题公园%20滨海新区民宿"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
+            <div class="tag-row">
+              <span class="tag">亲友接送</span>
+              <span class="tag">滨海住一晚</span>
+            </div>
+          </article>
+
+          <article class="route-card">
+            <div>
+              <div class="day-label">Day 4</div>
+              <h3>国家海洋博物馆 · 回市区 · 罾蹦鲤鱼</h3>
+              <ul>
+                <li>上午：按预约时段去国家海洋博物馆，重点看“海上故宫”和大厅里那艘郑和纯木质舰模型。</li>
+                <li>下午：亲友从滨海接回天津市区，避开晚高峰会舒服很多。</li>
+                <li>晚上：去
+                  <a class="poi-link" href="https://m.dianping.com/shop/534610" target="_blank" rel="noreferrer">红旗饭庄</a>
+                  吃罾蹦鲤鱼；饭后入住
+                  <a class="poi-link" href="https://m.dianping.com/search/keyword/10/0_天津南站鹏瑞利明宇丽雅酒店" target="_blank" rel="noreferrer">天津南站鹏瑞利明宇丽雅酒店</a>
+                  。</li>
+              </ul>
+            </div>
+            <figure class="route-map">
+              <img
+                src="assets/day4-route-map.svg"
+                alt="Day 4 国家海洋博物馆、天津市区红旗饭庄、天津南站鹏瑞利明宇丽雅酒店路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/国家海洋博物馆%20红旗饭庄%20天津南站鹏瑞利明宇丽雅酒店"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
+            <div class="tag-row">
+              <span class="tag">海博馆预约</span>
+              <span class="tag">返程酒店前置</span>
+            </div>
+          </article>
+
+          <article class="route-card">
+            <div>
+              <div class="day-label">Day 5</div>
+              <h3>天津南站 · 07:29 / 09:33 回合肥南</h3>
+              <ul>
+                <li>住在天津南站旁边后，早上不用横穿市区，退房后直接进站。</li>
+                <li>早班：G87，天津南 07:29 发，约 10:54 到合肥南，适合想中午前回到合肥。</li>
+                <li>舒适班：G981，天津南 09:33 发，约 13:31 到合肥南，睡醒吃早餐再走更从容。</li>
+                <li>车次会随调图和日期变化，最终以 12306 当日售票页为准。</li>
+              </ul>
+            </div>
+            <figure class="route-map">
+              <img
+                src="assets/day5-route-map.svg"
+                alt="Day 5 天津南站到合肥南站返程路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/天津南站%20合肥南站"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
+            <div class="tag-row">
+              <span class="tag">G87</span>
+              <span class="tag">G981</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">02 · 先定大本营</div>
+            <h2>前两晚住市区，返程前住天津南站</h2>
+          </div>
+          <p class="section-note">
+            这版动线不急着先回酒店：G680 到天津西后先打车去吃饭，再入住市区酒店；最后一晚换到天津南站旁，第二天早高铁更稳。
+          </p>
+        </div>
+
+        <div class="hotel-grid">
+          <article class="hotel-card hotel-feature-card primary">
+            <figure class="hotel-photo">
+              <img
+                src="assets/hotel-haihe-window-night.png"
+                alt="从酒店房间窗边眺望海河夜景和天津之眼"
+              />
+              <figcaption>高层河景房窗景意向图</figcaption>
+            </figure>
+            <div class="hotel-copy">
+              <div class="day-label">住宿核心</div>
+              <h3>
+                市区酒店靠天津站/津湾，景观备选
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/3044542"
+                  target="_blank"
+                  rel="noreferrer"
+                >天津海河假日酒店</a>
+              </h3>
+              <p>
+                前两晚按“天津站、津湾广场、意风区步行舒服”来选双床房，预算先看 500 元左右。若更想把天津之眼夜景放进住宿体验，再看
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/shop/3044542"
+                  target="_blank"
+                  rel="noreferrer"
+                >天津海河假日酒店</a>
+                高层、河景或摩天轮景观房型；最后一晚换到
+                <a
+                  class="poi-link"
+                  href="https://m.dianping.com/search/keyword/10/0_天津南站鹏瑞利明宇丽雅酒店"
+                  target="_blank"
+                  rel="noreferrer"
+                >天津南站鹏瑞利明宇丽雅酒店</a>
+                ，步行到天津南站更省心。
+              </p>
+              <span class="price">订房关键词：双床 / 可取消 / 近天津站 / 近天津南站</span>
+              <ul class="hotel-highlights">
+                <li>
+                  <strong>前两晚</strong>
+                  <span>天津站、津湾广场、意风区周边优先，方便早餐、步行看夜景和第二天市区行程。</span>
+                </li>
+                <li>
+                  <strong>第三晚</strong>
+                  <span>
+                    航母乐园玩完后住
+                    <a
+                      class="poi-link"
+                      href="https://m.dianping.com/search/keyword/10/0_泰达航母主题公园附近民宿"
+                      target="_blank"
+                      rel="noreferrer"
+                    >滨海附近民宿</a>
+                    或公寓，减少当天 70 公里往返疲劳。
+                    <a
+                      class="poi-link"
+                      href="https://m.dianping.com/search/keyword/10/0_泰达航母主题公园附近民宿"
+                      target="_blank"
+                      rel="noreferrer"
+                    >打开大众点评搜索滨海民宿</a>
+                  </span>
+                </li>
+                <li>
+                  <strong>第四晚</strong>
+                  <span>
+                    住
+                    <a
+                      class="poi-link"
+                      href="https://m.dianping.com/search/keyword/10/0_天津南站鹏瑞利明宇丽雅酒店"
+                      target="_blank"
+                      rel="noreferrer"
+                    >天津南站鹏瑞利明宇丽雅酒店</a>
+                    ，第二天可选 07:29 的 G87 或 09:33 的 G981 去合肥南。
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">03 · 火车与抵达</div>
+            <h2>最推荐下午出发的 G680，抵达后正好吃晚饭</h2>
+          </div>
+          <p class="section-note">
+            下午从合肥南走，傍晚到天津西，先打车吃利德顺，再入住酒店、看津湾广场和海河夜游，节奏最舒服。
+          </p>
+        </div>
+
+        <div class="train-grid">
+          <article class="train-card primary">
+            <div class="day-label">最推荐</div>
+            <h3>G680 合肥南 → 天津西</h3>
+            <div class="train-line">
+              <div class="station">
+                <span>合肥南出发</span>
+                <strong>14:12</strong>
+              </div>
+              <div class="rail-arrow">→</div>
+              <div class="station">
+                <span>天津西到达</span>
+                <strong>18:30</strong>
+              </div>
+            </div>
+            <p>
+              全程约 4 小时 18 分。下午不赶早，傍晚到天津西，先打车去利德顺吃晚饭，再入住酒店，最后接津湾广场、解放桥和海河夜景。
+            </p>
+            <a
+              class="action-link"
+              href="https://www.12306.cn/index/index.html"
+              target="_blank"
+              rel="noreferrer"
+            >打开 12306 查询</a>
+          </article>
+
+          <article class="train-card">
+            <div class="day-label">早到备选</div>
+            <h3>G1274 合肥南 → 天津西</h3>
+            <div class="train-line">
+              <div class="station">
+                <span>合肥南出发</span>
+                <strong>11:15</strong>
+              </div>
+              <div class="rail-arrow">→</div>
+              <div class="station">
+                <span>天津西到达</span>
+                <strong>15:19</strong>
+              </div>
+            </div>
+            <p>
+              全程约 4 小时 04 分。适合想下午多留一点时间的人，放完行李还能多逛意风区或提前吃一顿津菜。
+            </p>
+          </article>
+
+          <article class="train-card">
+            <div class="day-label">到得最早</div>
+            <h3>G2554 合肥 → 天津南</h3>
+            <div class="train-line">
+              <div class="station">
+                <span>合肥站出发</span>
+                <strong>09:00</strong>
+              </div>
+              <div class="rail-arrow">→</div>
+              <div class="station">
+                <span>天津南到达</span>
+                <strong>13:08</strong>
+              </div>
+            </div>
+            <p>
+              全程约 4 小时 08 分。到得早，但天津南离天津站酒店更远，适合想把 Day 1 下午行程拉满的人。
+            </p>
+          </article>
+        </div>
+
+        <div class="tip-box">
+          <h3>购票判断</h3>
+          <ul>
+            <li>默认首选 G680：下午出发、傍晚到天津西，先吃利德顺晚饭，再去酒店入住。</li>
+            <li>想早一点到天津，选 G1274；想中午后就到天津，选 G2554。</li>
+            <li>若坚持“天津站下车”，可把 T242/T243 作为备选，但它是次日凌晨到站，旅游体验不如白天高铁。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
             <div class="section-kicker">07 · 预算与预约</div>
-            <h2>大致花费心里有数</h2>
+            <h2>大致花费和预约顺序</h2>
           </div>
           <p class="section-note">
             价格会随节假日、天气和平台活动变化，下面按两人出行做保守估算。
@@ -1393,12 +1748,14 @@
               <tr>
                 <td>火车</td>
                 <td>以 12306 当日票价为准</td>
-                <td>T242/T243 到天津站最贴合本攻略；若想白天到达，可另查合肥南到天津西或天津南高铁。</td>
+                <td>去程最推荐 G680 到天津西，18:30 抵达后先去利德顺吃晚饭；返程看 G87 07:29 或 G981 09:33 从天津南到合肥南。</td>
               </tr>
               <tr>
                 <td>酒店</td>
-                <td>约 450 到 650 元/晚</td>
-                <td>天津站附近双床，希尔顿欢朋常在 500 元级别浮动，周末和节假日要提前订。</td>
+                <td>市区约 450 到 650 元/晚，天津南站按当日价格</td>
+                <td>前两晚住天津站/津湾附近，第三晚住滨海民宿，第四晚住
+                  <a class="poi-link" href="https://m.dianping.com/search/keyword/10/0_天津南站鹏瑞利明宇丽雅酒店" target="_blank" rel="noreferrer">天津南站鹏瑞利明宇丽雅酒店</a>
+                  方便早高铁。</td>
               </tr>
               <tr>
                 <td>海河游船</td>
@@ -1412,13 +1769,18 @@
               </tr>
               <tr>
                 <td>滨海交通</td>
-                <td>约 80 到 180 元/人</td>
-                <td>公共交通更省，市区到滨海再打车更省力；航母和海博馆之间建议打车。</td>
+                <td>亲友开车接送为主</td>
+                <td>市区到泰达航母主题公园约 70km，第三天直接住滨海，第四天下午再回市区。</td>
               </tr>
               <tr>
                 <td>正餐</td>
                 <td>约 80 到 180 元/人/顿</td>
-                <td>桂园、红旗、利德顺分量大，双人点 2 到 3 个菜即可。</td>
+                <td>
+                  <a class="poi-link" href="https://m.dianping.com/shop/536123" target="_blank" rel="noreferrer">桂园餐厅</a>、
+                  <a class="poi-link" href="https://m.dianping.com/shop/534610" target="_blank" rel="noreferrer">红旗饭庄</a>、
+                  <a class="poi-link" href="https://m.dianping.com/shop/1900615" target="_blank" rel="noreferrer">利德顺小老饭庄</a>
+                  分量大，双人点 2 到 3 个菜即可。
+                </td>
               </tr>
               <tr>
                 <td>相声</td>
@@ -1432,12 +1794,12 @@
         <div class="tip-box">
           <h3>预约顺序</h3>
           <ul>
-            <li>先查火车：优先 T242/T243 合肥站到天津站，确认到站日期和凌晨抵达时间。</li>
-            <li>先订酒店：天津站、津湾广场站、海河东路优先。</li>
-            <li>再约国家海洋博物馆：普通展免费预约，但热门时段容易满。</li>
-            <li>再买天津之眼：夜间票更热门，计划登舱就提前蹲票。</li>
+            <li>先查火车：去程优先 G680；返程按 07:29 的 G87 或 09:33 的 G981 核对余票。</li>
+            <li>先订酒店：前两晚天津站/津湾，第三晚滨海民宿，第四晚天津南站旁。</li>
+            <li>再约国家海洋博物馆：普通展免费预约，但热门时段容易满，郑和纯木质舰模型安排在入馆后先看。</li>
             <li>相声票提前 1 到 2 周看：德云社、葫芦相声社和名流茶馆都按实际场次购票。</li>
-            <li>最后定海河游船：看当天天气，夜景游优先津湾码头或天津站码头。</li>
+            <li>航母乐园看节假日活动：若有烟花秀，第三晚住滨海会更舒服。</li>
+            <li>最后定海河游船：看当天天气，Day 1 晚上优先津湾码头或天津站码头。</li>
           </ul>
         </div>
       </section>
@@ -1449,14 +1811,18 @@
             <h2>信息和图片来源</h2>
           </div>
           <p class="section-note">
-            页面使用真实图片，景点图片主要来自 Wikimedia Commons；景点图片点击跳转百度百科，卡片内不再单独显示图源。
+            页面使用真实图片，景点图片主要来自 Wikimedia Commons；景点图片点击跳转百度百科，餐馆和酒店名使用大众点评移动链接。
           </p>
         </div>
 
         <ol class="source-list">
-          <li><a href="https://www.12306.cn/index/index.html" target="_blank" rel="noreferrer">中国铁路 12306</a>，用于出行前核对 T242/T243 实际车次、票价和余票。</li>
-          <li><a href="https://train.hao86.com/T242/" target="_blank" rel="noreferrer">T242/T243 时刻参考</a>，用于合肥站到天津站车次时间参考。</li>
+          <li><a href="https://www.12306.cn/index/index.html" target="_blank" rel="noreferrer">中国铁路 12306</a>，用于出行前核对 G1274、G680、G2554、G87、G981 实际车次、票价和余票。</li>
+          <li><a href="https://www.gaotie.com.cn/lieche/tianjinnan-hefeinan.html" target="_blank" rel="noreferrer">高铁网天津南到合肥南时刻表</a>，用于返程 G87 07:29 到 10:54 的时刻交叉核对。</li>
+          <li><a href="https://www.gaotie.net/train/G981/" target="_blank" rel="noreferrer">高铁网 G981 时刻表</a>，用于返程 G981 天津南 09:33、合肥南 13:31 的时刻交叉核对。</li>
           <li><a href="https://www.icauto.com.cn/chuxing/gtr_49597.html" target="_blank" rel="noreferrer">合肥到天津车次对比参考</a>，用于火车方案交叉核对。</li>
+          <li><a href="https://www.ihg.com/holidayinn/hotels/cn/zh/tianjin/tsncr/hoteldetail" target="_blank" rel="noreferrer">IHG 天津海河假日酒店官方页</a>，用于酒店位置、海河景观和订房信息参考。</li>
+          <li><a href="https://m.ctrip.com/html5/hotel/hoteldetail/122334315.html" target="_blank" rel="noreferrer">携程天津南站鹏瑞利明宇丽雅酒店页面</a>，用于天津南站附近酒店位置和评价参考。</li>
+          <li><a href="https://m.dianping.com/shop/1900615" target="_blank" rel="noreferrer">大众点评利德顺小老饭庄复兴路店</a>、<a href="https://m.dianping.com/shop/4177561" target="_blank" rel="noreferrer">津门张记包子铺丰业里店</a>、<a href="https://m.dianping.com/shop/9333337" target="_blank" rel="noreferrer">狗不理海河意式风情区店</a>、<a href="https://m.dianping.com/shop/536123" target="_blank" rel="noreferrer">桂园餐厅五大道店</a>、<a href="https://m.dianping.com/shop/534610" target="_blank" rel="noreferrer">红旗饭庄</a>，用于页面餐馆点击跳转。</li>
           <li><a href="https://www.hilton.com/zh-hans/hotels/tsntchx-hampton-tianjin-railway-station/" target="_blank" rel="noreferrer">天津天津站希尔顿欢朋酒店官网</a>，用于酒店位置、双床房和设施信息。</li>
           <li><a href="https://us.trip.com/hotels/tianjin-tianjin-railway-station/hotels-c3r2467566/" target="_blank" rel="noreferrer">Trip.com 天津站周边酒店页</a>，用于天津站周边酒店参考价。</li>
           <li><a href="https://www.nmmc.cc/" target="_blank" rel="noreferrer">国家海洋博物馆官网</a>，用于预约和开放信息核对。</li>

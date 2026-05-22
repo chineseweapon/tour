@@ -1,50 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-labelledby="title desc">
-  <title id="title">Day 2 天津站到滨海新区路线图</title>
-  <desc id="desc">从天津站出发到国家海洋博物馆，再到泰达航母主题公园，小满海鲜晚餐后回到市区。</desc>
+  <title id="title">Day 2 天津市区步行和相声路线图</title>
+  <desc id="desc">从市区酒店出发，先到津门张记包子铺丰业里店，再去意大利风情街、狗不理、五大道、桂园餐厅和相声夜场。</desc>
   <rect width="390" height="560" fill="#fffaf2"/>
-  <rect x="22" y="96" width="346" height="382" rx="26" fill="#eef5f3" stroke="#dfd6c6"/>
-  <path d="M78 138 C166 180 104 260 186 305 S290 372 128 438" fill="none" stroke="#0e6b68" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 10"/>
+  <path d="M72 126 C150 166 84 222 160 270 S280 346 138 438" fill="none" stroke="#d7b77c" stroke-width="38" stroke-linecap="round" opacity=".48"/>
+  <path d="M72 126 C150 166 84 222 160 270 S280 346 138 438" fill="none" stroke="#0e6b68" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 10"/>
   <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
-    <text x="24" y="42" fill="#ad4d35" font-size="22" font-weight="700">Day 2 滨海一整天</text>
-    <text x="24" y="70" fill="#5d6b78" font-size="14">早出发，海博馆和航母放同一天。</text>
+    <text x="24" y="42" fill="#ad4d35" font-size="22" font-weight="700">Day 2 市区慢走线</text>
+    <text x="24" y="70" fill="#5d6b78" font-size="14">早餐、意风区、五大道、桂园和相声连起来。</text>
   </g>
   <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="15">
-    <g transform="translate(78 138)">
+    <g transform="translate(72 126)">
       <circle r="19" fill="#0e6b68"/>
       <text x="-6" y="6" fill="#fff" font-weight="700">1</text>
-      <rect x="34" y="-28" width="180" height="58" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-5" fill="#16212f" font-weight="700">天津站</text>
-      <text x="50" y="18" fill="#5d6b78" font-size="13">早出发去滨海</text>
+      <rect x="34" y="-30" width="230" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="50" y="-8" fill="#16212f" font-weight="700">津门张记包子</text>
+      <text x="50" y="15" fill="#5d6b78" font-size="13">丰业里店，酒店附近早餐</text>
     </g>
-    <g transform="translate(150 218)">
+    <g transform="translate(150 200)">
       <circle r="19" fill="#ad4d35"/>
       <text x="-6" y="6" fill="#fff" font-weight="700">2</text>
-      <rect x="34" y="-28" width="190" height="58" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-5" fill="#16212f" font-weight="700">国家海洋博物馆</text>
-      <text x="50" y="18" fill="#5d6b78" font-size="13">按预约时段入馆</text>
+      <rect x="34" y="-30" width="190" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="50" y="-8" fill="#16212f" font-weight="700">意大利风情街</text>
+      <text x="50" y="15" fill="#5d6b78" font-size="13">上午看街区建筑</text>
     </g>
-    <g transform="translate(186 305)">
+    <g transform="translate(102 276)">
       <circle r="19" fill="#c58b28"/>
       <text x="-6" y="6" fill="#fff" font-weight="700">3</text>
-      <rect x="34" y="-28" width="185" height="58" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-5" fill="#16212f" font-weight="700">泰达航母乐园</text>
-      <text x="50" y="18" fill="#5d6b78" font-size="13">下午看基辅号</text>
+      <rect x="34" y="-30" width="235" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="50" y="-8" fill="#16212f" font-weight="700">狗不理意风区店</text>
+      <text x="50" y="15" fill="#5d6b78" font-size="13">中午少量打卡</text>
     </g>
-    <g transform="translate(258 376)">
+    <g transform="translate(216 348)">
       <circle r="19" fill="#0e6b68"/>
       <text x="-6" y="6" fill="#fff" font-weight="700">4</text>
-      <rect x="-210" y="-28" width="186" height="58" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="-194" y="-5" fill="#16212f" font-weight="700">小满海鲜晚餐</text>
-      <text x="-194" y="18" fill="#5d6b78" font-size="13">皮皮虾锅贴</text>
+      <rect x="-168" y="-30" width="144" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="-152" y="-8" fill="#16212f" font-weight="700">民园/五大道</text>
+      <text x="-152" y="15" fill="#5d6b78" font-size="13">赏花看建筑</text>
     </g>
-    <g transform="translate(128 438)">
+    <g transform="translate(138 438)">
       <circle r="19" fill="#ad4d35"/>
       <text x="-6" y="6" fill="#fff" font-weight="700">5</text>
-      <rect x="34" y="-28" width="180" height="58" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-5" fill="#16212f" font-weight="700">回市区</text>
-      <text x="50" y="18" fill="#5d6b78" font-size="13">相声或天津之眼</text>
+      <rect x="34" y="-36" width="210" height="74" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="50" y="-13" fill="#16212f" font-weight="700">桂园餐厅 + 相声</text>
+      <text x="50" y="10" fill="#5d6b78" font-size="13">八珍豆腐后去夜场</text>
+      <text x="50" y="30" fill="#5d6b78" font-size="13">德云社/葫芦/茶馆</text>
     </g>
   </g>
   <path d="M24 508 H366" stroke="#dfd6c6"/>
-  <text x="24" y="536" fill="#5d6b78" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="13">建议：滨海景点间打车更省力，回市区别排太满。</text>
+  <text x="24" y="536" fill="#5d6b78" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="13">核心：相声提前 1 到 2 周订，晚饭别排太晚。</text>
 </svg>

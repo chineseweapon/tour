@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-labelledby="title desc">
+  <title id="title">Day 5 天津南站到合肥南站返程路线图</title>
+  <desc id="desc">从天津南站鹏瑞利明宇丽雅酒店退房，步行或短途接驳到天津南站，选择七点二十九或九点三十三出发回合肥南站。</desc>
+  <rect width="390" height="560" fill="#fffaf2"/>
+  <path d="M78 142 C126 212 250 198 270 286 S220 388 120 430" fill="none" stroke="#d7b77c" stroke-width="38" stroke-linecap="round" opacity=".48"/>
+  <path d="M78 142 C126 212 250 198 270 286 S220 388 120 430" fill="none" stroke="#0e6b68" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 10"/>
+  <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <text x="24" y="42" fill="#ad4d35" font-size="22" font-weight="700">Day 5 天津南返程</text>
+    <text x="24" y="70" fill="#5d6b78" font-size="14">住在车站旁，早上直接上高铁回合肥南。</text>
+  </g>
+  <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="15">
+    <g transform="translate(78 142)">
+      <circle r="19" fill="#0e6b68"/>
+      <text x="-6" y="6" fill="#fff" font-weight="700">1</text>
+      <rect x="34" y="-36" width="216" height="74" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="50" y="-13" fill="#16212f" font-weight="700">鹏瑞利明宇丽雅</text>
+      <text x="50" y="10" fill="#5d6b78" font-size="13">退房后去天津南</text>
+      <text x="50" y="30" fill="#5d6b78" font-size="13">步行或短途接驳</text>
+    </g>
+    <g transform="translate(270 286)">
+      <circle r="19" fill="#ad4d35"/>
+      <text x="-6" y="6" fill="#fff" font-weight="700">2</text>
+      <rect x="-200" y="-36" width="176" height="74" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="-184" y="-13" fill="#16212f" font-weight="700">天津南站</text>
+      <text x="-184" y="10" fill="#5d6b78" font-size="13">G87 07:29</text>
+      <text x="-184" y="30" fill="#5d6b78" font-size="13">G981 09:33</text>
+    </g>
+    <g transform="translate(120 430)">
+      <circle r="19" fill="#c58b28"/>
+      <text x="-6" y="6" fill="#fff" font-weight="700">3</text>
+      <rect x="34" y="-36" width="210" height="74" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="50" y="-13" fill="#16212f" font-weight="700">合肥南站</text>
+      <text x="50" y="10" fill="#5d6b78" font-size="13">G87 约 10:54 到</text>
+      <text x="50" y="30" fill="#5d6b78" font-size="13">G981 约 13:31 到</text>
+    </g>
+  </g>
+  <path d="M24 508 H366" stroke="#dfd6c6"/>
+  <text x="24" y="536" fill="#5d6b78" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="13">核心：最终车次和检票口以 12306 与车站屏幕为准。</text>
+</svg>
