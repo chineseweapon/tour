@@ -1,50 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-labelledby="title desc">
-  <title id="title">Day 1 天津西到利德顺和海河夜景路线图</title>
-  <desc id="desc">18:30 到天津西，先到利德顺小老饭庄复兴路店晚餐，再入住市区酒店，步行到津湾广场和海河游船码头。</desc>
+  <title id="title">Day 1 天津西到海河夜景地理示意线路图</title>
+  <desc id="desc">北上南下的示意图：天津西在市区西侧，利德顺在天津西东南侧，天津站和津湾广场在海河东侧，晚间沿海河看夜景。</desc>
   <rect width="390" height="560" fill="#fffaf2"/>
-  <path d="M70 128 C128 166 78 206 136 252 S250 334 154 430" fill="none" stroke="#8ec5cc" stroke-width="38" stroke-linecap="round" opacity=".46"/>
-  <path d="M70 128 C128 166 78 206 136 252 S250 334 154 430" fill="none" stroke="#0e6b68" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 10"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ad4d35"/>
+    </marker>
+  </defs>
   <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
-    <text x="24" y="42" fill="#ad4d35" font-size="22" font-weight="700">Day 1 到站先吃饭</text>
-    <text x="24" y="70" fill="#5d6b78" font-size="14">G680 18:30 到天津西，晚饭后看海河夜景。</text>
+    <text x="24" y="42" fill="#ad4d35" font-size="22" font-weight="700">Day 1 西站进城，转向海河</text>
+    <text x="24" y="70" fill="#5d6b78" font-size="14">天津西在西侧；饭后往东南到天津站、津湾与海河。</text>
+    <g transform="translate(326 26)">
+      <circle r="20" fill="#fff" stroke="#dfd6c6"/>
+      <path d="M0 -13 L5 4 L0 1 L-5 4 Z" fill="#0e6b68"/>
+      <text x="-5" y="-23" fill="#5d6b78" font-size="11">北</text>
+    </g>
   </g>
+  <path d="M222 96 C268 142 218 208 260 270 C295 322 246 380 282 452" fill="none" stroke="#8ec5cc" stroke-width="34" stroke-linecap="round" opacity=".45"/>
+  <path d="M222 96 C268 142 218 208 260 270 C295 322 246 380 282 452" fill="none" stroke="#0e6b68" stroke-width="4" stroke-linecap="round" opacity=".62"/>
+  <path d="M66 180 C102 182 112 198 136 210 C178 231 194 246 230 266 C248 286 256 308 252 334 C250 356 264 382 282 404" fill="none" stroke="#ad4d35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="12 9" marker-end="url(#arrow)"/>
   <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="15">
-    <g transform="translate(70 128)">
-      <circle r="19" fill="#0e6b68"/>
-      <text x="-6" y="6" fill="#fff" font-weight="700">1</text>
-      <rect x="34" y="-30" width="245" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-8" fill="#16212f" font-weight="700">天津西站</text>
-      <text x="50" y="15" fill="#5d6b78" font-size="13">18:30 下车，打车约 1.2km</text>
+    <g transform="translate(66 180)">
+      <circle r="18" fill="#0e6b68"/>
+      <text x="-5" y="6" fill="#fff" font-weight="700">1</text>
+      <rect x="30" y="-34" width="202" height="66" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="44" y="-11" fill="#16212f" font-weight="700">天津西站</text>
+      <text x="44" y="12" fill="#5d6b78" font-size="13">市区西侧，18:30 到</text>
     </g>
-    <g transform="translate(136 206)">
-      <circle r="19" fill="#ad4d35"/>
-      <text x="-6" y="6" fill="#fff" font-weight="700">2</text>
-      <rect x="34" y="-30" width="220" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-8" fill="#16212f" font-weight="700">利德顺小老饭庄</text>
-      <text x="50" y="15" fill="#5d6b78" font-size="13">复兴路店，先吃晚饭</text>
+    <g transform="translate(138 210)">
+      <circle r="18" fill="#ad4d35"/>
+      <text x="-5" y="6" fill="#fff" font-weight="700">2</text>
+      <rect x="-106" y="30" width="214" height="66" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="-90" y="53" fill="#16212f" font-weight="700">利德顺小老饭庄</text>
+      <text x="-90" y="76" fill="#5d6b78" font-size="13">复兴路，距西站近</text>
     </g>
-    <g transform="translate(96 286)">
-      <circle r="19" fill="#c58b28"/>
-      <text x="-6" y="6" fill="#fff" font-weight="700">3</text>
-      <rect x="34" y="-30" width="235" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-8" fill="#16212f" font-weight="700">市区酒店</text>
-      <text x="50" y="15" fill="#5d6b78" font-size="13">天津站/津湾附近入住</text>
+    <g transform="translate(230 266)">
+      <circle r="18" fill="#c58b28"/>
+      <text x="-5" y="6" fill="#fff" font-weight="700">3</text>
+      <rect x="30" y="-34" width="110" height="66" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="44" y="-11" fill="#16212f" font-weight="700">市区酒店</text>
+      <text x="44" y="12" fill="#5d6b78" font-size="13">天津站附近</text>
     </g>
-    <g transform="translate(196 358)">
-      <circle r="19" fill="#0e6b68"/>
-      <text x="-6" y="6" fill="#fff" font-weight="700">4</text>
-      <rect x="-160" y="-30" width="136" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="-144" y="-8" fill="#16212f" font-weight="700">津湾广场</text>
-      <text x="-144" y="15" fill="#5d6b78" font-size="13">解放桥灯光</text>
+    <g transform="translate(252 334)">
+      <circle r="18" fill="#0e6b68"/>
+      <text x="-5" y="6" fill="#fff" font-weight="700">4</text>
+      <rect x="-178" y="-34" width="148" height="66" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="-162" y="-11" fill="#16212f" font-weight="700">津湾/解放桥</text>
+      <text x="-162" y="12" fill="#5d6b78" font-size="13">海河夜景核心</text>
     </g>
-    <g transform="translate(154 430)">
-      <circle r="19" fill="#ad4d35"/>
-      <text x="-6" y="6" fill="#fff" font-weight="700">5</text>
-      <rect x="34" y="-30" width="190" height="62" rx="8" fill="#fff" stroke="#dfd6c6"/>
-      <text x="50" y="-8" fill="#16212f" font-weight="700">海河游船码头</text>
-      <text x="50" y="15" fill="#5d6b78" font-size="13">可坐船，也可散步</text>
+    <g transform="translate(282 404)">
+      <circle r="18" fill="#ad4d35"/>
+      <text x="-5" y="6" fill="#fff" font-weight="700">5</text>
+      <rect x="-210" y="30" width="240" height="66" rx="8" fill="#fff" stroke="#dfd6c6"/>
+      <text x="-194" y="53" fill="#16212f" font-weight="700">津湾/天津站码头</text>
+      <text x="-194" y="76" fill="#5d6b78" font-size="13">坐船或沿河步行</text>
     </g>
   </g>
   <path d="M24 508 H366" stroke="#dfd6c6"/>
-  <text x="24" y="536" fill="#5d6b78" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="13">核心：别先折返酒店，先把第一顿天津菜吃掉。</text>
+  <text x="24" y="536" fill="#5d6b78" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="13">示意按相对方位画：先西站附近吃饭，再向海河核心区移动。</text>
 </svg>
