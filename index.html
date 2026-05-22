@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>合肥到天津亲友接驳版旅游攻略</title>
+    <title>天津旅游攻略 5天4晚</title>
     <style>
       :root {
         --ink: #16212f;
@@ -99,7 +99,7 @@
 
       h1 {
         max-width: 760px;
-        margin: 22px 0 18px;
+        margin: 0 0 18px;
         font-size: 54px;
         line-height: 1.08;
         letter-spacing: 0;
@@ -120,6 +120,12 @@
         max-width: 940px;
       }
 
+      .hero-meta.hero-summary {
+        grid-template-columns: 1fr;
+        max-width: 920px;
+        margin-top: 30px;
+      }
+
       .meta-item {
         min-height: 98px;
         padding: 16px;
@@ -138,6 +144,18 @@
       .meta-item span {
         color: rgba(255, 255, 255, 0.82);
         font-size: 14px;
+      }
+
+      .hero-summary-card {
+        min-height: auto;
+        padding: 22px 24px;
+      }
+
+      .hero-summary-card span {
+        display: block;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 18px;
+        line-height: 1.78;
       }
 
       main {
@@ -395,16 +413,17 @@
       .train-line {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
-        gap: 14px;
+        gap: 12px;
         align-items: center;
         margin: 18px 0 14px;
-      }
-
-      .station {
         padding: 14px;
         background: #fff;
         border: 1px solid var(--line);
         border-radius: 8px;
+      }
+
+      .station {
+        min-width: 0;
       }
 
       .station span {
@@ -420,10 +439,20 @@
         line-height: 1.1;
       }
 
+      .station:last-child {
+        text-align: right;
+      }
+
       .rail-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
         color: var(--brick);
         font-weight: 900;
         font-size: 24px;
+        line-height: 1;
       }
 
       .price {
@@ -512,6 +541,38 @@
       .route-map img {
         height: auto;
         object-fit: contain;
+      }
+
+      .video-feature {
+        margin-top: 22px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .video-frame {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background: #111a22;
+      }
+
+      .video-frame iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-copy {
+        padding: 18px;
+      }
+
+      .video-copy h3 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.25;
       }
 
       .food-card {
@@ -653,7 +714,7 @@
         }
 
         h1 {
-          margin: 18px 0 14px;
+          margin: 0 0 14px;
           font-size: 31px;
           line-height: 1.12;
         }
@@ -680,11 +741,32 @@
           -webkit-overflow-scrolling: touch;
         }
 
+        .hero-meta.hero-summary {
+          display: grid;
+          grid-template-columns: 1fr;
+          margin-top: 20px;
+          padding-bottom: 0;
+          overflow: visible;
+          scroll-snap-type: none;
+        }
+
         .meta-item {
           flex: 0 0 78%;
           min-height: 112px;
           padding: 14px;
           scroll-snap-align: start;
+        }
+
+        .hero-meta.hero-summary .meta-item {
+          flex: initial;
+          width: 100%;
+          min-height: auto;
+          scroll-snap-align: none;
+        }
+
+        .hero-summary-card span {
+          font-size: 15px;
+          line-height: 1.72;
         }
 
         section {
@@ -735,15 +817,6 @@
         .train-card h3,
         .crosstalk-card h3 {
           font-size: 20px;
-        }
-
-        .train-line {
-          grid-template-columns: 1fr;
-        }
-
-        .rail-arrow {
-          text-align: center;
-          transform: rotate(90deg);
         }
 
         .action-link {
@@ -817,29 +890,12 @@
   <body>
     <header class="hero">
       <div class="hero-inner">
-        <div class="eyebrow">合肥出发 · G680 傍晚进津 · 亲友接驳版</div>
-        <h1>合肥到天津，住在天津站边上的海河城市假期</h1>
-        <p>
-          以 G680 18:30 到天津西为起点，第一晚先吃天津菜再看海河夜景，第二天把意风区、五大道和相声串起来，第三天亲友开车送到滨海航母乐园，第四天预约国家海洋博物馆，晚上回市区吃罾蹦鲤鱼，最后住到天津南站旁边方便返程。
-        </p>
-        <div class="hero-meta">
-          <div class="meta-item">
-            <b>住宿核心</b>
-            <span>前两晚住天津站、津湾广场附近；返程前一晚住
-              <a class="poi-link" href="https://m.dianping.com/search/keyword/10/0_天津南站鹏瑞利明宇丽雅酒店" target="_blank" rel="noreferrer">天津南站鹏瑞利明宇丽雅酒店</a>
-              。</span>
-          </div>
-          <div class="meta-item">
-            <b>游玩节奏</b>
-            <span>市区步行多，滨海两天靠亲友开车接送，节假日航母烟花单独关注。</span>
-          </div>
-          <div class="meta-item">
-            <b>交通提醒</b>
-            <span>最推荐 G680，14:12 出发、18:30 到天津西，正好接晚饭和夜景。</span>
-          </div>
-          <div class="meta-item">
-            <b>订票重点</b>
-            <span>天津之眼、海河游船、相声夜场建议提前预约或订票。</span>
+        <h1>天津旅游攻略 5天4晚</h1>
+        <div class="hero-meta hero-summary">
+          <div class="meta-item hero-summary-card">
+            <span>
+              以 G680 18:30 到天津西为起点，第一晚先吃天津菜再看海河夜景，第二天把意风区、五大道和相声串起来，第三天亲友开车送到滨海航母乐园，第四天预约国家海洋博物馆，晚上回市区吃罾蹦鲤鱼，最后住到天津南站旁边方便返程。
+            </span>
           </div>
         </div>
       </div>
@@ -856,6 +912,22 @@
             市区景点适合夜景和 City Walk；滨海这版拆成航母乐园和国家海洋博物馆两天，靠亲友开车接送更舒服。
           </p>
         </div>
+
+        <article class="video-feature">
+          <div class="video-copy">
+            <h3>天津“海河之夜”灯光秀</h3>
+          </div>
+          <div class="video-frame">
+            <iframe
+              src="https://player.bilibili.com/player.html?isOutside=true&bvid=BV12UeuzgEjG&page=1&high_quality=1&autoplay=0"
+              title="相约上合，绽放“津”彩！天津夜景今起上新，“海河之夜”灯光秀将常态化点亮"
+              loading="lazy"
+              allow="fullscreen; picture-in-picture; encrypted-media"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </article>
 
         <div class="spot-grid">
           <article class="spot-card">
@@ -1031,10 +1103,10 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">02 · 晚间项目</div>
-            <h2>想听相声，提前 1 到 2 周订票</h2>
+            <h2>想听相声，提前 1 到 2 周预约</h2>
           </div>
           <p class="section-note">
-            相声适合替换天津之眼登舱或部分夜间散步；热门场次不建议当天临时订。
+            相声适合替换天津之眼登舱或部分夜间散步；可在微信/票务小程序里搜索剧场名称在线预约，热门场次不建议当天临时订。
           </p>
         </div>
 
@@ -1059,7 +1131,7 @@
               <div class="day-label">热门优先</div>
               <h3>德云社天津分社</h3>
               <p>
-                地址在建国道 95 号，离天津站和意风区不远。热门演员或周末场更抢手，建议提前 1 到 2 周网上订票，常见周五开下周票。
+                地址在建国道 95 号，离天津站和意风区不远。热门演员或周末场更抢手，建议提前 1 到 2 周在微信/大麦小程序搜索“德云社天津”在线预约，常见周五开下周票。
               </p>
               <ul class="detail-list">
                 <li>适合：第一次来天津，想看更有名气的相声班底。</li>
@@ -1100,7 +1172,7 @@
               </p>
               <ul class="detail-list">
                 <li>适合：想离古文化街、天津之眼近一些，动线更顺。</li>
-                <li>提醒：周末和节假日提前订，现场临时买票不稳。</li>
+                <li>提醒：周末和节假日提前在微信/携程等小程序搜索“葫芦相声社”在线预约，现场临时买票不稳。</li>
               </ul>
               <a
                 class="action-link"
@@ -1136,7 +1208,7 @@
               <ul class="detail-list">
                 <li>适合：不追演员阵容，只想体验天津茶馆相声氛围。</li>
                 <li>位置：古文化街附近，听完可以顺路看三岔河口和天津之眼外景。</li>
-                <li>参考：普通场次价格和场次变化大，以购票页当天为准。</li>
+                <li>参考：普通场次价格和场次变化大，可在微信/大麦小程序搜索“名流茶馆古文化街”在线预约，以当天购票页为准。</li>
               </ul>
               <a
                 class="action-link"
@@ -1782,7 +1854,7 @@
               <tr>
                 <td>相声</td>
                 <td>按场次和座位浮动</td>
-                <td>德云社、葫芦相声社和古文化街茶馆建议提前 1 到 2 周订票，节假日更要早订。</td>
+                <td>德云社、葫芦相声社和古文化街茶馆建议提前 1 到 2 周，在微信/票务小程序里搜索名称在线预约，节假日更要早订。</td>
               </tr>
             </tbody>
           </table>
@@ -1794,16 +1866,13 @@
             <li>先查火车：去程优先 G680；返程按 07:29 的 G87 或 09:33 的 G981 核对余票。</li>
             <li>先订酒店：前两晚天津站/津湾，第三晚滨海民宿，第四晚天津南站旁。</li>
             <li>再约国家海洋博物馆：普通展免费预约，但热门时段容易满，郑和纯木质舰模型安排在入馆后先看。</li>
-            <li>相声票提前 1 到 2 周订票：德云社、葫芦相声社和名流茶馆都按实际场次购票。</li>
+            <li>相声票提前 1 到 2 周预约：在微信/大麦/携程等小程序里搜索德云社天津、葫芦相声社、名流茶馆，可在线预约。</li>
             <li>航母乐园看节假日活动：若有烟花秀，第三晚住滨海会更舒服。</li>
             <li>最后定海河游船：看当天天气，Day 1 晚上优先津湾码头或天津站码头。</li>
           </ul>
         </div>
       </section>
 
-      <footer>
-        生成日期：2026-05-22。实际火车票价、开闭馆、演出场次和船班会随日期变化，出行前以 12306、景区官方公众号、票务平台和酒店平台当日信息为准。
-      </footer>
     </main>
   </body>
 </html>
