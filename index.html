@@ -160,12 +160,18 @@
         font-size: 15px;
       }
 
+      .train-grid,
       .route-grid,
       .hotel-grid,
       .spot-grid,
-      .food-grid {
+      .food-grid,
+      .crosstalk-grid {
         display: grid;
         gap: 18px;
+      }
+
+      .train-grid {
+        grid-template-columns: 1.2fr 0.8fr;
       }
 
       .route-grid {
@@ -184,11 +190,17 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .crosstalk-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .panel,
       .route-card,
       .hotel-card,
       .spot-card,
       .food-card,
+      .train-card,
+      .crosstalk-card,
       .tip-box {
         background: var(--surface);
         border: 1px solid var(--line);
@@ -268,6 +280,50 @@
         border-color: #d7b77c;
       }
 
+      .train-card,
+      .crosstalk-card {
+        padding: 24px;
+      }
+
+      .train-card.primary {
+        background: #fdf7eb;
+        border-color: #d7b77c;
+      }
+
+      .train-line {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 14px;
+        align-items: center;
+        margin: 18px 0 14px;
+      }
+
+      .station {
+        padding: 14px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .station span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .station strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 24px;
+        line-height: 1.1;
+      }
+
+      .rail-arrow {
+        color: var(--brick);
+        font-weight: 900;
+        font-size: 24px;
+      }
+
       .price {
         display: inline-block;
         margin-top: 8px;
@@ -276,6 +332,32 @@
         background: var(--brick);
         border-radius: 999px;
         font-weight: 700;
+      }
+
+      .action-link,
+      .map-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        max-width: 100%;
+        margin-top: 14px;
+        padding: 8px 12px;
+        color: #fff;
+        background: var(--teal);
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .map-link {
+        width: 100%;
+        background: var(--brick);
+      }
+
+      .crosstalk-card .action-link + .action-link {
+        margin-left: 8px;
       }
 
       figure {
@@ -290,6 +372,11 @@
       .photo {
         height: 210px;
         background: var(--sky);
+      }
+
+      .photo-link {
+        display: block;
+        height: 100%;
       }
 
       .spot-card .body,
@@ -307,6 +394,19 @@
         margin-top: 8px;
         color: #71808c;
         font-size: 12px;
+      }
+
+      .route-map {
+        margin: 18px 0 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .route-map img {
+        height: auto;
+        object-fit: contain;
       }
 
       .food-card {
@@ -334,6 +434,29 @@
         color: var(--muted);
         font-weight: 400;
         font-size: 14px;
+      }
+
+      .crosstalk-card h3,
+      .train-card h3 {
+        margin: 16px 0 10px;
+        font-size: 22px;
+        line-height: 1.25;
+      }
+
+      .crosstalk-card p,
+      .train-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .detail-list {
+        margin: 14px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      .detail-list li {
+        margin: 8px 0;
       }
 
       .cost-table {
@@ -401,11 +524,13 @@
 
         .hero-meta,
         .route-grid,
-        .spot-grid {
+        .spot-grid,
+        .crosstalk-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .hotel-grid,
+        .train-grid,
         .food-grid {
           grid-template-columns: 1fr;
         }
@@ -446,7 +571,8 @@
         }
 
         .route-grid,
-        .spot-grid {
+        .spot-grid,
+        .crosstalk-grid {
           grid-template-columns: 1fr;
         }
 
@@ -488,6 +614,8 @@
 
         .route-card,
         .hotel-card,
+        .train-card,
+        .crosstalk-card,
         .tip-box {
           padding: 18px;
         }
@@ -499,8 +627,27 @@
         .route-card h3,
         .hotel-card h3,
         .spot-card h3,
-        .food-card h3 {
+        .food-card h3,
+        .train-card h3,
+        .crosstalk-card h3 {
           font-size: 20px;
+        }
+
+        .train-line {
+          grid-template-columns: 1fr;
+        }
+
+        .rail-arrow {
+          text-align: center;
+          transform: rotate(90deg);
+        }
+
+        .action-link {
+          width: 100%;
+        }
+
+        .crosstalk-card .action-link + .action-link {
+          margin-left: 0;
         }
 
         .photo {
@@ -581,11 +728,11 @@
           </div>
           <div class="meta-item">
             <b>交通提醒</b>
-            <span>合肥方向高铁常到天津西或天津南，购票时优先筛选“天津站”。</span>
+            <span>优先选 T242/T243，合肥站 17:29 发，次日凌晨到天津站。</span>
           </div>
           <div class="meta-item">
             <b>订票重点</b>
-            <span>天津之眼、国家海洋博物馆、海河游船建议提前预约。</span>
+            <span>天津之眼、海河游船、相声夜场建议提前预约或蹲票。</span>
           </div>
         </div>
       </div>
@@ -635,7 +782,56 @@
       <section>
         <div class="section-head">
           <div>
-            <div class="section-kicker">02 · 三天两晚动线</div>
+            <div class="section-kicker">02 · 火车与抵达</div>
+            <h2>具体车次优先选 T242/T243，到天津站下车</h2>
+          </div>
+          <p class="section-note">
+            这趟车最符合“天津站下车”的设定，但凌晨到站，酒店要按前一晚安排。
+          </p>
+        </div>
+
+        <div class="train-grid">
+          <article class="train-card primary">
+            <div class="day-label">主推车次</div>
+            <h3>T242/T243 合肥站 → 天津站</h3>
+            <div class="train-line">
+              <div class="station">
+                <span>合肥站出发</span>
+                <strong>17:29</strong>
+              </div>
+              <div class="rail-arrow">→</div>
+              <div class="station">
+                <span>天津站到达</span>
+                <strong>次日约 04:03</strong>
+              </div>
+            </div>
+            <p>
+              车次到天津后变为 T243，适合严格要求在天津站下车、酒店也订在天津站附近的行程。具体发车、到站和余票以 12306 当日查询为准。
+            </p>
+            <a
+              class="action-link"
+              href="https://www.12306.cn/index/index.html"
+              target="_blank"
+              rel="noreferrer"
+            >打开 12306 查询</a>
+          </article>
+
+          <article class="train-card">
+            <div class="day-label">凌晨到站处理</div>
+            <h3>不要把第一晚酒店省掉</h3>
+            <ul class="detail-list">
+              <li>订酒店时把入住日期定为出发当天晚上，提前备注凌晨到店。</li>
+              <li>到天津站后步行或短途打车到酒店，先洗漱补觉，上午再开始正式游玩。</li>
+              <li>若想白天到达，可改查合肥南到天津西或天津南的高铁，再地铁/打车到天津站酒店。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">03 · 三天两晚动线</div>
             <h2>按天津站落地设计，不走回头路</h2>
           </div>
           <p class="section-note">
@@ -649,12 +845,25 @@
               <div class="day-label">Day 1</div>
               <h3>天津站 · 津湾广场 · 意风区 · 海河夜游</h3>
               <ul>
-                <li>下午：天津站下车，入住天津站附近酒店。</li>
+                <li>凌晨：T242/T243 到天津站，入住已提前订好的天津站附近酒店，补觉后出门。</li>
                 <li>傍晚：步行到津湾广场、解放桥、世纪钟拍照。</li>
                 <li>晚餐：张记包子或狗不理浅尝，别吃太撑。</li>
                 <li>晚上：津湾码头或天津站码头坐海河夜游，看解放桥、意风区、天津之眼灯光。</li>
+                <li>相声替换方案：若买到德云社或葫芦相声社夜场，可压缩意风区散步，保留海河夜景。</li>
               </ul>
             </div>
+            <figure class="route-map">
+              <img
+                src="assets/day1-route-map.svg"
+                alt="Day 1 天津站、津湾广场、意风区、海河夜游路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/天津站%20津湾广场%20解放桥%20世纪钟%20意大利风情区%20津湾码头"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
             <div class="tag-row">
               <span class="tag">步行为主</span>
               <span class="tag">夜景重点</span>
@@ -670,8 +879,21 @@
                 <li>中午：在滨海简单用餐，给两个大景点留足时间。</li>
                 <li>下午：泰达航母主题公园，看“基辅号”和军事主题展演。</li>
                 <li>晚上：滨海可吃小满海鲜皮皮虾锅贴；回市区后若有体力，再安排天津之眼或利德顺小老饭庄吃牛窝骨。</li>
+                <li>相声替换方案：回市区后若赶夜场相声，天津之眼改为只拍外景或顺延到 Day 1 夜游沿线远观。</li>
               </ul>
             </div>
+            <figure class="route-map">
+              <img
+                src="assets/day2-route-map.svg"
+                alt="Day 2 天津站、国家海洋博物馆、泰达航母、小满海鲜、回市区路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/天津站%20国家海洋博物馆%20泰达航母主题公园%20小满海鲜皮皮虾锅贴%20天津站"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
             <div class="tag-row">
               <span class="tag">建议早出发</span>
               <span class="tag">滨海单独一天</span>
@@ -688,6 +910,18 @@
                 <li>下午：回酒店取行李，天津站返程；若车在天津西或天津南，提前预留地铁时间。</li>
               </ul>
             </div>
+            <figure class="route-map">
+              <img
+                src="assets/day3-route-map.svg"
+                alt="Day 3 天津站、民园广场、五大道、桂园餐厅、天津站返程路线地图"
+              />
+            </figure>
+            <a
+              class="map-link"
+              href="https://map.baidu.com/search/天津站%20民园广场%20五大道%20桂园餐厅%20天津站"
+              target="_blank"
+              rel="noreferrer"
+            >打开百度地图路线</a>
             <div class="tag-row">
               <span class="tag">适合拍照</span>
               <span class="tag">午餐重头戏</span>
@@ -699,7 +933,7 @@
       <section>
         <div class="section-head">
           <div>
-            <div class="section-kicker">03 · 景点图文</div>
+            <div class="section-kicker">04 · 景点图文</div>
             <h2>必去景点逐个安排</h2>
           </div>
           <p class="section-note">
@@ -711,12 +945,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/jiefang-bridge.jpg"
-                  alt="天津解放桥"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E8%A7%A3%E6%94%BE%E6%A1%A5"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/jiefang-bridge.jpg"
+                    alt="天津解放桥"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>津湾广场与解放桥</h3>
@@ -729,12 +969,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/italian-street.jpg"
-                  alt="天津意大利风情街"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E5%A4%A9%E6%B4%A5%E6%84%8F%E5%BC%8F%E9%A3%8E%E6%83%85%E5%8C%BA"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/italian-street.jpg"
+                    alt="天津意大利风情街"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>意大利风情街</h3>
@@ -747,12 +993,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/haihe-night.jpg"
-                  alt="天津海河夜景"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E6%B5%B7%E6%B2%B3"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/haihe-night.jpg"
+                    alt="天津海河夜景"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>海河游船夜游</h3>
@@ -765,12 +1017,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/carrier-kiev.jpg"
-                  alt="天津泰达航母主题公园基辅号"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E6%B3%B0%E8%BE%BE%E8%88%AA%E6%AF%8D%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/carrier-kiev.jpg"
+                    alt="天津泰达航母主题公园基辅号"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>滨海航母乐园</h3>
@@ -783,12 +1041,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/wudadao-minyuan.jpg"
-                  alt="天津五大道民园广场"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E4%BA%94%E5%A4%A7%E9%81%93"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/wudadao-minyuan.jpg"
+                    alt="天津五大道民园广场"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>民园广场与五大道</h3>
@@ -801,12 +1065,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/tianjin-eye.jpg"
-                  alt="天津之眼摩天轮夜景"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E5%A4%A9%E6%B4%A5%E4%B9%8B%E7%9C%BC"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/tianjin-eye.jpg"
+                    alt="天津之眼摩天轮夜景"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>天津之眼摩天轮</h3>
@@ -819,12 +1089,18 @@
           <article class="spot-card">
             <figure>
               <div class="photo">
-                <img
-                  src="assets/maritime-museum.jpg"
-                  alt="天津国家海洋博物馆"
-                />
+                <a
+                  class="photo-link"
+                  href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E6%B5%B7%E6%B4%8B%E5%8D%9A%E7%89%A9%E9%A6%86"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="assets/maritime-museum.jpg"
+                    alt="天津国家海洋博物馆"
+                  />
+                </a>
               </div>
-              <figcaption>图源：Wikimedia Commons</figcaption>
             </figure>
             <div class="body">
               <h3>国家海洋博物馆</h3>
@@ -839,7 +1115,82 @@
       <section>
         <div class="section-head">
           <div>
-            <div class="section-kicker">04 · 美食与餐馆</div>
+            <div class="section-kicker">05 · 晚间项目</div>
+            <h2>想听相声，提前 1 到 2 周盯票</h2>
+          </div>
+          <p class="section-note">
+            相声适合替换天津之眼登舱或部分夜间散步；热门场次不建议当天临时碰运气。
+          </p>
+        </div>
+
+        <div class="crosstalk-grid">
+          <article class="crosstalk-card">
+            <div class="day-label">热门优先</div>
+            <h3>德云社天津分社</h3>
+            <p>
+              地址在建国道 95 号，离天津站和意风区不远。热门演员或周末场更抢手，建议提前 1 到 2 周网上盯票，常见周五开下周票。
+            </p>
+            <ul class="detail-list">
+              <li>适合：第一次来天津，想看更有名气的相声班底。</li>
+              <li>搭配：Day 1 海河夜游前后，或 Day 2 滨海回市区后。</li>
+            </ul>
+            <a
+              class="action-link"
+              href="https://search.damai.cn/search.html?keyword=%E5%BE%B7%E4%BA%91%E7%A4%BE%E5%A4%A9%E6%B4%A5"
+              target="_blank"
+              rel="noreferrer"
+            >大麦订票入口</a>
+          </article>
+
+          <article class="crosstalk-card">
+            <div class="day-label">轻松好笑</div>
+            <h3>葫芦相声社·乐呵兄弟</h3>
+            <p>
+              地址在城厢东路与北马路交口龙亭家园 12 号楼 1 门 201，靠近鼓楼、古文化街和天津之眼一线，适合安排成夜间加餐。
+            </p>
+            <ul class="detail-list">
+              <li>适合：想离古文化街、天津之眼近一些，动线更顺。</li>
+              <li>提醒：周末和节假日提前订，现场临时买票不稳。</li>
+            </ul>
+            <a
+              class="action-link"
+              href="https://you.ctrip.com/sight/tianjin154/149647240.html"
+              target="_blank"
+              rel="noreferrer"
+            >携程订票/信息入口</a>
+          </article>
+
+          <article class="crosstalk-card">
+            <div class="day-label">兜底选择</div>
+            <h3>古文化街普通相声馆子</h3>
+            <p>
+              如果德云社和葫芦相声社没票，可以看名流茶馆古文化街店一类的茶馆相声，胜在离古文化街、天津之眼近，临时调整更方便。
+            </p>
+            <ul class="detail-list">
+              <li>适合：不追演员阵容，只想体验天津茶馆相声氛围。</li>
+              <li>位置：古文化街附近，听完可以顺路看三岔河口和天津之眼外景。</li>
+              <li>参考：普通场次价格和场次变化大，以购票页当天为准。</li>
+            </ul>
+            <a
+              class="action-link"
+              href="https://search.damai.cn/search.html?keyword=%E5%90%8D%E6%B5%81%E8%8C%B6%E9%A6%86%E5%8F%A4%E6%96%87%E5%8C%96%E8%A1%97"
+              target="_blank"
+              rel="noreferrer"
+            >大麦搜索入口</a>
+            <a
+              class="action-link"
+              href="https://maps.apple.com/place?auid=1118368587320586&lsp=57879"
+              target="_blank"
+              rel="noreferrer"
+            >查看名流茶馆地图</a>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">06 · 美食与餐馆</div>
             <h2>每道菜匹配顺路餐馆</h2>
           </div>
           <p class="section-note">
@@ -1021,7 +1372,7 @@
       <section>
         <div class="section-head">
           <div>
-            <div class="section-kicker">05 · 预算与预约</div>
+            <div class="section-kicker">07 · 预算与预约</div>
             <h2>大致花费心里有数</h2>
           </div>
           <p class="section-note">
@@ -1039,6 +1390,11 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>火车</td>
+                <td>以 12306 当日票价为准</td>
+                <td>T242/T243 到天津站最贴合本攻略；若想白天到达，可另查合肥南到天津西或天津南高铁。</td>
+              </tr>
               <tr>
                 <td>酒店</td>
                 <td>约 450 到 650 元/晚</td>
@@ -1064,6 +1420,11 @@
                 <td>约 80 到 180 元/人/顿</td>
                 <td>桂园、红旗、利德顺分量大，双人点 2 到 3 个菜即可。</td>
               </tr>
+              <tr>
+                <td>相声</td>
+                <td>按场次和座位浮动</td>
+                <td>德云社、葫芦相声社和古文化街茶馆建议提前 1 到 2 周看票，节假日更要早订。</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1071,9 +1432,11 @@
         <div class="tip-box">
           <h3>预约顺序</h3>
           <ul>
+            <li>先查火车：优先 T242/T243 合肥站到天津站，确认到站日期和凌晨抵达时间。</li>
             <li>先订酒店：天津站、津湾广场站、海河东路优先。</li>
             <li>再约国家海洋博物馆：普通展免费预约，但热门时段容易满。</li>
             <li>再买天津之眼：夜间票更热门，计划登舱就提前蹲票。</li>
+            <li>相声票提前 1 到 2 周看：德云社、葫芦相声社和名流茶馆都按实际场次购票。</li>
             <li>最后定海河游船：看当天天气，夜景游优先津湾码头或天津站码头。</li>
           </ul>
         </div>
@@ -1082,15 +1445,18 @@
       <section>
         <div class="section-head">
           <div>
-            <div class="section-kicker">06 · 来源</div>
+            <div class="section-kicker">08 · 来源</div>
             <h2>信息和图片来源</h2>
           </div>
           <p class="section-note">
-            页面使用真实图片，景点图片主要来自 Wikimedia Commons；新增菜品和餐馆信息参考文旅、OTA、地图和媒体公开页面。
+            页面使用真实图片，景点图片主要来自 Wikimedia Commons；景点图片点击跳转百度百科，卡片内不再单独显示图源。
           </p>
         </div>
 
         <ol class="source-list">
+          <li><a href="https://www.12306.cn/index/index.html" target="_blank" rel="noreferrer">中国铁路 12306</a>，用于出行前核对 T242/T243 实际车次、票价和余票。</li>
+          <li><a href="https://train.hao86.com/T242/" target="_blank" rel="noreferrer">T242/T243 时刻参考</a>，用于合肥站到天津站车次时间参考。</li>
+          <li><a href="https://www.icauto.com.cn/chuxing/gtr_49597.html" target="_blank" rel="noreferrer">合肥到天津车次对比参考</a>，用于火车方案交叉核对。</li>
           <li><a href="https://www.hilton.com/zh-hans/hotels/tsntchx-hampton-tianjin-railway-station/" target="_blank" rel="noreferrer">天津天津站希尔顿欢朋酒店官网</a>，用于酒店位置、双床房和设施信息。</li>
           <li><a href="https://us.trip.com/hotels/tianjin-tianjin-railway-station/hotels-c3r2467566/" target="_blank" rel="noreferrer">Trip.com 天津站周边酒店页</a>，用于天津站周边酒店参考价。</li>
           <li><a href="https://www.nmmc.cc/" target="_blank" rel="noreferrer">国家海洋博物馆官网</a>，用于预约和开放信息核对。</li>
@@ -1103,6 +1469,11 @@
           <li><a href="https://english.visitbeijing.com.cn/article/47ONvjCI18X" target="_blank" rel="noreferrer">Visit Beijing 耳朵眼炸糕介绍</a>，用于耳朵眼炸糕图片、店铺历史和地址参考。</li>
           <li><a href="https://us.trip.com/restaurant/china/tianjin/detail/restaurant-136235822" target="_blank" rel="noreferrer">Trip.com 小满海鲜·皮皮虾锅贴页面</a>，用于皮皮虾锅贴餐馆、地址和用户评价参考。</li>
           <li><a href="https://maps.apple.com/place?auid=1118772225341191&lsp=57879" target="_blank" rel="noreferrer">Apple Maps 小满海鲜·皮皮虾锅贴王鼓楼店</a>，用于皮皮虾锅贴市区分店和推荐菜参考。</li>
+          <li><a href="https://search.damai.cn/search.html?keyword=%E5%BE%B7%E4%BA%91%E7%A4%BE%E5%A4%A9%E6%B4%A5" target="_blank" rel="noreferrer">大麦德云社天津搜索页</a>，用于德云社天津分社订票入口。</li>
+          <li><a href="https://you.ctrip.com/sight/tianjin154/149647240.html" target="_blank" rel="noreferrer">葫芦相声社携程页面</a>，用于葫芦相声社地址和购票信息参考。</li>
+          <li><a href="https://search.damai.cn/search.html?keyword=%E5%90%8D%E6%B5%81%E8%8C%B6%E9%A6%86%E5%8F%A4%E6%96%87%E5%8C%96%E8%A1%97" target="_blank" rel="noreferrer">大麦名流茶馆搜索页</a>，用于古文化街普通相声馆子订票入口。</li>
+          <li><a href="https://maps.apple.com/place?auid=1118368587320586&lsp=57879" target="_blank" rel="noreferrer">Apple Maps 名流茶馆古文化街店</a>，用于普通相声茶馆位置参考。</li>
+          <li><a href="https://baike.baidu.com/" target="_blank" rel="noreferrer">百度百科</a>，用于景点图片点击后的对应百科页面。</li>
           <li>罾蹦鲤鱼图片由用户提供，已保存为本地页面素材。</li>
           <li><a href="https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E6%B4%A5%E6%AD%A3%E5%92%8C%E9%94%85%E8%B4%B4.jpg" target="_blank" rel="noreferrer">Wikimedia Commons 天津正和锅贴图片</a>，用于皮皮虾锅贴卡片的锅贴实拍图。</li>
           <li><a href="https://commons.wikimedia.org/" target="_blank" rel="noreferrer">Wikimedia Commons</a>，用于津湾广场、解放桥、意风区、海河夜景、航母、五大道、天津之眼、国家海洋博物馆、煎饼果子和狗不理等真实图片。</li>
@@ -1110,7 +1481,7 @@
       </section>
 
       <footer>
-        生成日期：2026-05-22。实际票价、开闭馆、演出和船班会随季节变化，出行前以 12306、景区官方公众号和酒店平台当日信息为准。
+        生成日期：2026-05-22。实际火车票价、开闭馆、演出场次和船班会随日期变化，出行前以 12306、景区官方公众号、票务平台和酒店平台当日信息为准。
       </footer>
     </main>
   </body>
