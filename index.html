@@ -617,6 +617,14 @@
         object-position: center;
       }
 
+      .food-card.zengbeng-focus {
+        min-height: 360px;
+      }
+
+      .food-card.zengbeng-focus .photo {
+        min-height: 360px;
+      }
+
       .restaurant {
         margin-top: 12px;
         padding-top: 12px;
@@ -1027,6 +1035,11 @@
         .food-card .photo {
           height: 220px;
           min-height: 220px;
+        }
+
+        .food-card.zengbeng-focus .photo {
+          height: 360px;
+          min-height: 360px;
         }
 
         .back-to-hero {
@@ -1665,7 +1678,7 @@
             </div>
           </article>
 
-          <article class="food-card">
+          <article class="food-card zengbeng-focus">
             <figure class="photo">
               <img
                 src="assets/zengbeng-carp.jpg"
