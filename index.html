@@ -35,6 +35,7 @@
 
       html {
         -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
       }
 
       a {
@@ -491,6 +492,10 @@
         margin-left: 8px;
       }
 
+      .traffic-policy-card .action-link + .action-link {
+        margin-left: 8px;
+      }
+
       figure {
         margin: 0;
       }
@@ -503,12 +508,31 @@
 
       .photo {
         height: 210px;
+        position: relative;
+        overflow: hidden;
         background: var(--sky);
       }
 
       .photo-link {
         display: block;
         height: 100%;
+      }
+
+      .photo-carousel {
+        position: absolute;
+        inset: 0;
+        background: var(--sky);
+      }
+
+      .photo-carousel img {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 900ms ease;
+      }
+
+      .photo-carousel img.is-active {
+        opacity: 1;
       }
 
       .spot-card .body,
@@ -545,6 +569,7 @@
 
       .video-feature {
         margin-top: 22px;
+        margin-bottom: 20px;
         background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -584,6 +609,12 @@
       .food-card .photo {
         height: 100%;
         min-height: 278px;
+        background: #f0f2f5;
+      }
+
+      .food-card .photo img {
+        object-fit: contain;
+        object-position: center;
       }
 
       .restaurant {
@@ -659,6 +690,88 @@
       .tip-box {
         padding: 22px;
         margin-top: 18px;
+      }
+
+      .traffic-policy-card {
+        margin: 0 0 20px;
+        background: #fff;
+      }
+
+      .policy-note {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .limit-table-wrap {
+        margin-top: 14px;
+      }
+
+      .limit-table {
+        width: 100%;
+        min-width: 620px;
+        border-collapse: collapse;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .limit-table th,
+      .limit-table td {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+
+      .limit-table th {
+        color: #fff;
+        background: var(--teal);
+        font-weight: 800;
+      }
+
+      .limit-table strong {
+        color: var(--brick);
+      }
+
+      .back-to-hero {
+        position: fixed;
+        right: max(22px, env(safe-area-inset-right));
+        bottom: max(22px, env(safe-area-inset-bottom));
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        width: 70px;
+        height: 64px;
+        color: #fff;
+        background: transparent;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: none;
+        text-decoration: none;
+      }
+
+      .back-to-hero svg {
+        width: 70px;
+        height: 62px;
+        overflow: visible;
+        filter: none;
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+
+      .top-icon-shape {
+        fill: #292a36;
+        fill-rule: evenodd;
+      }
+
+      .back-to-hero:hover,
+      .back-to-hero:focus-visible {
+        outline: 3px solid rgba(197, 139, 40, 0.36);
+        outline-offset: 3px;
+      }
+
+      .back-to-hero:hover svg,
+      .back-to-hero:focus-visible svg {
+        transform: translateY(-2px);
       }
 
       footer {
@@ -827,6 +940,76 @@
           margin-left: 0;
         }
 
+        .traffic-policy-card .action-link + .action-link {
+          margin-left: 0;
+        }
+
+        .limit-table-wrap {
+          overflow: visible;
+          border-radius: 0;
+        }
+
+        .limit-table {
+          display: block;
+          min-width: 0;
+          border: 0;
+          background: transparent;
+        }
+
+        .limit-table thead {
+          display: none;
+        }
+
+        .limit-table tbody,
+        .limit-table tr,
+        .limit-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .limit-table tr {
+          margin-top: 12px;
+          padding: 12px;
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          background: rgba(255, 250, 242, 0.92);
+        }
+
+        .limit-table tr:first-child {
+          margin-top: 0;
+        }
+
+        .limit-table td {
+          border-bottom: 0;
+          padding: 0;
+          font-size: 14px;
+        }
+
+        .limit-table td:first-child {
+          margin-bottom: 10px;
+          color: var(--brick);
+          font-weight: 800;
+          line-height: 1.35;
+        }
+
+        .limit-table td:not(:first-child) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
+          padding: 8px 0;
+          border-top: 1px solid var(--line);
+          color: var(--ink);
+          font-weight: 800;
+        }
+
+        .limit-table td:not(:first-child)::before {
+          content: attr(data-label);
+          color: var(--muted);
+          font-size: 13px;
+          font-weight: 800;
+        }
+
         .photo {
           height: 220px;
         }
@@ -844,6 +1027,18 @@
         .food-card .photo {
           height: 220px;
           min-height: 220px;
+        }
+
+        .back-to-hero {
+          right: max(14px, env(safe-area-inset-right));
+          bottom: max(14px, env(safe-area-inset-bottom));
+          width: 62px;
+          height: 58px;
+        }
+
+        .back-to-hero svg {
+          width: 66px;
+          height: 59px;
         }
 
         th,
@@ -888,7 +1083,7 @@
     </style>
   </head>
   <body>
-    <header class="hero">
+    <header class="hero" id="top">
       <div class="hero-inner">
         <h1>天津旅游攻略 5天4晚</h1>
         <div class="hero-meta hero-summary">
@@ -939,10 +1134,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/jiefang-bridge.jpg"
-                    alt="天津解放桥"
-                  />
+                  <div class="photo-carousel" data-interval="3600">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/jiefang-1.jpg"
+                      alt="天津解放桥夜景"
+                    />
+                    <img
+                      src="assets/carousel/jiefang-2.jpg"
+                      alt="津湾广场与海河夜色"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/jiefang-3.jpg"
+                      alt="津湾广场城市天际线"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/jiefang-4.jpg"
+                      alt="解放桥旁的津湾广场"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -963,10 +1176,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/italian-street.jpg"
-                    alt="天津意大利风情街"
-                  />
+                  <div class="photo-carousel" data-interval="3800">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/italian-1.jpg"
+                      alt="天津意大利风情街建筑"
+                    />
+                    <img
+                      src="assets/carousel/italian-2.jpg"
+                      alt="意大利风情街广场"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/italian-3.jpg"
+                      alt="意大利风情街欧式街景"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/italian-4.jpg"
+                      alt="意大利风情街街区夜色"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -987,10 +1218,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/haihe-night.jpg"
-                    alt="天津海河夜景"
-                  />
+                  <div class="photo-carousel" data-interval="4000">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/haihe-1.jpg"
+                      alt="天津海河夜景"
+                    />
+                    <img
+                      src="assets/carousel/haihe-2.jpg"
+                      alt="海河两岸灯光夜景"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/haihe-3.jpg"
+                      alt="海河国泰桥夜景"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/haihe-4.jpg"
+                      alt="海河光华桥夜景"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1011,10 +1260,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/carrier-kiev.jpg"
-                    alt="天津泰达航母主题公园基辅号"
-                  />
+                  <div class="photo-carousel" data-interval="4200">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/carrier-1.jpg"
+                      alt="天津泰达航母主题公园基辅号"
+                    />
+                    <img
+                      src="assets/carousel/carrier-2.jpg"
+                      alt="滨海航母乐园全景"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/carrier-3.jpg"
+                      alt="基辅号航母舰艏"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/carrier-4.jpg"
+                      alt="航母乐园近距离侧身"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1035,10 +1302,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/wudadao-minyuan.jpg"
-                    alt="天津五大道民园广场"
-                  />
+                  <div class="photo-carousel" data-interval="3900">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/wudadao-1.jpg"
+                      alt="天津五大道街景"
+                    />
+                    <img
+                      src="assets/carousel/wudadao-2.jpg"
+                      alt="五大道近代建筑"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/wudadao-3.jpg"
+                      alt="民园广场街区"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/wudadao-4.jpg"
+                      alt="五大道花树与洋楼"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1059,10 +1344,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/tianjin-eye.jpg"
-                    alt="天津之眼摩天轮夜景"
-                  />
+                  <div class="photo-carousel" data-interval="4100">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/tianjin-eye-1.jpg"
+                      alt="天津之眼摩天轮夜景"
+                    />
+                    <img
+                      src="assets/carousel/tianjin-eye-2.jpg"
+                      alt="天津之眼与海河暮色"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/tianjin-eye-3.jpg"
+                      alt="天津之眼远眺城市天际线"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/tianjin-eye-4.jpg"
+                      alt="天津之眼白天外景"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1083,10 +1386,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/maritime-museum.jpg"
-                    alt="天津国家海洋博物馆"
-                  />
+                  <div class="photo-carousel" data-interval="3700">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/maritime-1.jpg"
+                      alt="天津国家海洋博物馆外观"
+                    />
+                    <img
+                      src="assets/carousel/maritime-2.jpg"
+                      alt="国家海洋博物馆展厅"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/maritime-3.jpg"
+                      alt="国家海洋博物馆海洋展陈"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/maritime-4.jpg"
+                      alt="国家海洋博物馆建筑立面"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1120,10 +1441,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/crosstalk-deyunshe.jpg"
-                    alt="德云社天津分社建国道剧场门口"
-                  />
+                  <div class="photo-carousel" data-interval="4300">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/deyunshe-1.jpg"
+                      alt="德云社天津分社开业现场"
+                    />
+                    <img
+                      src="assets/carousel/deyunshe-2.jpg"
+                      alt="德云社天津分社剧场演出"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/deyunshe-3.jpg"
+                      alt="德云社天津分社台上致辞"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/deyunshe-4.jpg"
+                      alt="德云社天津分社揭幕现场"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1157,10 +1496,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/crosstalk-hulu.jpg"
-                    alt="葫芦相声社乐呵兄弟门口"
-                  />
+                  <div class="photo-carousel" data-interval="3900">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/hulu-1.jpg"
+                      alt="葫芦相声社乐呵兄弟台上演出"
+                    />
+                    <img
+                      src="assets/carousel/hulu-2.jpg"
+                      alt="葫芦相声社演员合影"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/hulu-3.jpg"
+                      alt="葫芦相声社天津总社舞台"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/hulu-4.png"
+                      alt="葫芦相声社演出现场"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1192,10 +1549,28 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src="assets/crosstalk-mingliu.jpg"
-                    alt="名流茶馆古文化街店门口"
-                  />
+                  <div class="photo-carousel" data-interval="4100">
+                    <img
+                      class="is-active"
+                      src="assets/carousel/mingliu-1.jpg"
+                      alt="名流茶馆相声演出"
+                    />
+                    <img
+                      src="assets/carousel/mingliu-2.jpg"
+                      alt="名流茶馆台上表演"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/mingliu-3.jpg"
+                      alt="名流茶馆古文化街店门口"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/carousel/mingliu-4.jpg"
+                      alt="名流茶馆茶馆相声空间"
+                      loading="lazy"
+                    />
+                  </div>
                 </a>
               </div>
             </figure>
@@ -1448,6 +1823,82 @@
         </div>
       </section>
       <section>
+        <article class="tip-box traffic-policy-card">
+          <h3>自驾注意：外地车进天津与尾号限行</h3>
+          <ul>
+            <li>高峰限行：工作日 7:00-9:00、16:00-19:00，外埠号牌机动车在外环线（不含）以内限行（北京号牌小型、微型载客汽车除外）。</li>
+            <li>尾号限行：工作日 7:00-19:00，本市及外埠号牌机动车在外环线（不含）以内按尾号轮换限行；机动车号牌尾号为英文字母的按 0 号管理。</li>
+            <li>通行凭证：外埠号牌小型、微型载客汽车（北京号牌除外）可申办高峰通行凭证，在指定时段进入外环线（不含）以内道路。</li>
+            <li>怎么办：微信搜索“天津公安民生服务平台”小程序，进入“小客车高峰预约”，登录后绑定车辆信息（号牌类型、车牌号、车辆类型、车辆识别代码），选择进中心城区日期和截止日期，提交后在“我的办件”里下载“小客车高峰预约凭证”。</li>
+            <li>什么时候办：不要等当天现办；常规口径是每天 23:00 前可预约下一个自然日及之后两天，入口开放时间以小程序公告为准。凭证免费，每次连续 7 个自然日；外省市小客车每年最多 12 次，天津区域指标车每年最多 24 次。</li>
+            <li>怎么用：电子凭证存在手机里备查即可；如果不方便出示电子版，再打印后放在前挡风玻璃明显处。注意凭证只解决早晚高峰通行，尾号限行日仍然无效。</li>
+            <li>特殊车辆：新能源车、执行任务特种车及通告列明车辆不受上述措施限制；载货汽车按货车专门限行规定执行。</li>
+          </ul>
+          <div class="table-wrap limit-table-wrap">
+            <table class="limit-table">
+              <thead>
+                <tr>
+                  <th>轮换周期</th>
+                  <th>周一</th>
+                  <th>周二</th>
+                  <th>周三</th>
+                  <th>周四</th>
+                  <th>周五</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>2026-03-30 至 2026-06-28</strong></td>
+                  <td data-label="周一">2 和 7</td>
+                  <td data-label="周二">3 和 8</td>
+                  <td data-label="周三">4 和 9</td>
+                  <td data-label="周四">5 和 0</td>
+                  <td data-label="周五">1 和 6</td>
+                </tr>
+                <tr>
+                  <td>2026-06-29 至 2026-09-27</td>
+                  <td data-label="周一">1 和 6</td>
+                  <td data-label="周二">2 和 7</td>
+                  <td data-label="周三">3 和 8</td>
+                  <td data-label="周四">4 和 9</td>
+                  <td data-label="周五">5 和 0</td>
+                </tr>
+                <tr>
+                  <td>2026-09-28 至 2026-12-27</td>
+                  <td data-label="周一">5 和 0</td>
+                  <td data-label="周二">1 和 6</td>
+                  <td data-label="周三">2 和 7</td>
+                  <td data-label="周四">3 和 8</td>
+                  <td data-label="周五">4 和 9</td>
+                </tr>
+                <tr>
+                  <td>2026-12-28 至 2027-03-28</td>
+                  <td data-label="周一">4 和 9</td>
+                  <td data-label="周二">5 和 0</td>
+                  <td data-label="周三">1 和 6</td>
+                  <td data-label="周四">2 和 7</td>
+                  <td data-label="周五">3 和 8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="policy-note">
+            当前页面日期为 2026-05-23，属于第一轮换期；遇法定节假日放假调休而调整为上班的周六、周日，尾号和高峰限行通常不按工作日执行。出发前再核对天津公安交管最新通告与当日临时交通管控。
+          </p>
+          <a
+            class="action-link"
+            href="https://tj.bendibao.com/traffic/2026317/166698.shtm"
+            target="_blank"
+            rel="noreferrer"
+          >查看 2026 限行通告整理</a>
+          <a
+            class="action-link"
+            href="https://m.tj.bendibao.com/live/158378.shtm"
+            target="_blank"
+            rel="noreferrer"
+          >查看高峰通行证办理指南</a>
+        </article>
+
         <div class="section-head">
           <div>
             <div class="section-kicker">04 · 火车与抵达</div>
@@ -1842,6 +2293,11 @@
                 <td>市区到泰达航母主题公园约 70km，第三天直接住滨海，第四天下午再回市区。</td>
               </tr>
               <tr>
+                <td>高峰通行凭证</td>
+                <td>免费</td>
+                <td>亲友自驾若要在工作日 7:00-9:00 或 16:00-19:00 进入外环线以内，提前在微信“天津公安民生服务平台”小程序里办“小客车高峰预约”；先确认当天尾号不限行，再办高峰凭证。</td>
+              </tr>
+              <tr>
                 <td>正餐</td>
                 <td>约 80 到 180 元/人/顿</td>
                 <td>
@@ -1867,6 +2323,7 @@
             <li>先订酒店：前两晚天津站/津湾，第三晚滨海民宿，第四晚天津南站旁。</li>
             <li>再约国家海洋博物馆：普通展免费预约，但热门时段容易满，郑和纯木质舰模型安排在入馆后先看。</li>
             <li>相声票提前 1 到 2 周预约：在微信/大麦/携程等小程序里搜索德云社天津、葫芦相声社、名流茶馆，可在线预约。</li>
+            <li>亲友开车进市区前一天看限行：如果要在早晚高峰进外环线以内，微信搜索“天津公安民生服务平台”办理“小客车高峰预约”；尾号限行日不要硬进，改避峰或打车。</li>
             <li>航母乐园看节假日活动：若有烟花秀，第三晚住滨海会更舒服。</li>
             <li>最后定海河游船：看当天天气，Day 1 晚上优先津湾码头或天津站码头。</li>
           </ul>
@@ -1874,5 +2331,39 @@
       </section>
 
     </main>
+    <a class="back-to-hero" href="#top" aria-label="返回第一屏" title="返回第一屏">
+      <svg viewBox="0 0 360 320" aria-hidden="true" focusable="false">
+        <path class="top-icon-shape" d="M184 28L128 120H244Z" />
+        <path class="top-icon-shape" d="M5 148H107V174H76V294H38V174H5Z" />
+        <path
+          class="top-icon-shape"
+          d="M124 148H240V294H124ZM158 181V263H206V181Z"
+        />
+        <path
+          class="top-icon-shape"
+          d="M259 148H356V229H297V294H259ZM297 181V205H329V181Z"
+        />
+      </svg>
+    </a>
+    <script>
+      const carouselGroups = document.querySelectorAll(".photo-carousel");
+
+      carouselGroups.forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll("img"));
+
+        if (slides.length < 2) {
+          return;
+        }
+
+        let index = 0;
+        const interval = Number(carousel.dataset.interval || 3800);
+
+        window.setInterval(() => {
+          slides[index].classList.remove("is-active");
+          index = (index + 1) % slides.length;
+          slides[index].classList.add("is-active");
+        }, interval);
+      });
+    </script>
   </body>
 </html>
