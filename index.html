@@ -7,15 +7,26 @@
     <style>
       :root {
         --ink: #16212f;
-        --muted: #5d6b78;
-        --paper: #f7f3ec;
-        --surface: #fffaf2;
-        --line: #dfd6c6;
-        --brick: #ad4d35;
-        --teal: #0e6b68;
-        --gold: #c58b28;
-        --sky: #d7e8ea;
-        --shadow: 0 14px 38px rgba(22, 33, 47, 0.13);
+        --muted: #60707d;
+        --paper: #f5f7f5;
+        --surface: #fffdf8;
+        --surface-container-low: #f9f2e8;
+        --surface-container: #f1ebe1;
+        --surface-container-high: #e9f1ef;
+        --line: #d8d0c2;
+        --line-strong: #b9c7c4;
+        --brick: #a73f2d;
+        --teal: #006d6c;
+        --gold: #b87812;
+        --sky: #dceced;
+        --on-primary: #ffffff;
+        --primary-container: #bfe9e6;
+        --on-primary-container: #00201f;
+        --tertiary-container: #f7deae;
+        --state-primary-hover: rgba(0, 109, 108, 0.08);
+        --state-primary-press: rgba(0, 109, 108, 0.14);
+        --shadow: 0 16px 38px rgba(22, 33, 47, 0.11);
+        --shadow-strong: 0 22px 54px rgba(22, 33, 47, 0.17);
       }
 
       * {
@@ -25,7 +36,9 @@
       body {
         margin: 0;
         color: var(--ink);
-        background: var(--paper);
+        background:
+          linear-gradient(180deg, #eef7f5 0, var(--paper) 360px),
+          var(--paper);
         font-family:
           "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial,
           sans-serif;
@@ -42,12 +55,29 @@
         color: inherit;
       }
 
+      ::selection {
+        color: var(--on-primary-container);
+        background: var(--primary-container);
+      }
+
+      :focus-visible {
+        outline: 3px solid rgba(184, 120, 18, 0.48);
+        outline-offset: 3px;
+      }
+
       .poi-link {
         color: var(--teal);
         font-weight: 800;
         text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 3px;
+        text-decoration-color: rgba(0, 109, 108, 0.35);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+        transition: color 180ms ease, text-decoration-color 180ms ease;
+      }
+
+      .poi-link:hover {
+        color: var(--brick);
+        text-decoration-color: rgba(167, 63, 45, 0.45);
       }
 
       .restaurant .poi-link,
@@ -72,6 +102,12 @@
         display: grid;
         align-items: end;
         background:
+          linear-gradient(
+            120deg,
+            rgba(0, 32, 31, 0.6) 0%,
+            rgba(9, 35, 45, 0.24) 44%,
+            rgba(8, 18, 28, 0.78) 100%
+          ),
           linear-gradient(
             rgba(8, 18, 28, 0.24),
             rgba(8, 18, 28, 0.7)
@@ -104,6 +140,7 @@
         font-size: 54px;
         line-height: 1.08;
         letter-spacing: 0;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35);
       }
 
       .hero p {
@@ -130,10 +167,11 @@
       .meta-item {
         min-height: 98px;
         padding: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        background: rgba(13, 28, 38, 0.52);
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: rgba(14, 36, 43, 0.58);
         border-radius: 8px;
         backdrop-filter: blur(10px);
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
       }
 
       .meta-item b {
@@ -150,6 +188,13 @@
       .hero-summary-card {
         min-height: auto;
         padding: 22px 24px;
+        border-color: rgba(255, 255, 255, 0.38);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(10, 42, 48, 0.62)
+          );
       }
 
       .hero-summary-card span {
@@ -166,7 +211,7 @@
 
       section {
         padding: 56px 0;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid rgba(216, 208, 194, 0.82);
       }
 
       .section-head {
@@ -181,6 +226,7 @@
         color: var(--brick);
         font-weight: 700;
         font-size: 14px;
+        text-transform: uppercase;
       }
 
       h2 {
@@ -188,6 +234,7 @@
         font-size: 34px;
         line-height: 1.2;
         letter-spacing: 0;
+        color: #102b35;
       }
 
       .section-note {
@@ -243,6 +290,23 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         box-shadow: var(--shadow);
+        transition:
+          border-color 180ms ease,
+          box-shadow 180ms ease,
+          transform 180ms ease;
+      }
+
+      .route-card:hover,
+      .hotel-card:hover,
+      .spot-card:hover,
+      .food-card:hover,
+      .train-card:hover,
+      .crosstalk-card:hover,
+      .video-feature:hover,
+      .tip-box:hover {
+        border-color: var(--line-strong);
+        box-shadow: var(--shadow-strong);
+        transform: translateY(-2px);
       }
 
       .panel {
@@ -260,11 +324,12 @@
       .day-label {
         width: max-content;
         padding: 4px 9px;
-        background: var(--teal);
-        color: #fff;
+        background: var(--primary-container);
+        color: var(--on-primary-container);
         border-radius: 999px;
         font-size: 13px;
         font-weight: 700;
+        box-shadow: inset 0 0 0 1px rgba(0, 109, 108, 0.18);
       }
 
       .route-card h3,
@@ -300,7 +365,7 @@
 
       .tag {
         border: 1px solid var(--line);
-        background: #fff;
+        background: var(--surface-container-high);
         color: var(--teal);
         border-radius: 999px;
         padding: 4px 9px;
@@ -313,7 +378,8 @@
       }
 
       .hotel-card.primary {
-        background: #fdf7eb;
+        background:
+          linear-gradient(135deg, #fff8ea 0%, #eff8f5 100%);
         border-color: #d7b77c;
       }
 
@@ -379,9 +445,10 @@
       .hotel-highlights li {
         margin: 0;
         padding: 12px 14px;
-        background: rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.78);
         border: 1px solid var(--line);
         border-radius: 8px;
+        box-shadow: inset 3px 0 0 rgba(0, 109, 108, 0.18);
       }
 
       .hotel-highlights strong {
@@ -407,7 +474,8 @@
       }
 
       .train-card.primary {
-        background: #fdf7eb;
+        background:
+          linear-gradient(135deg, #fff8ea 0%, #eff8f5 100%);
         border-color: #d7b77c;
       }
 
@@ -418,9 +486,10 @@
         align-items: center;
         margin: 18px 0 14px;
         padding: 14px;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.86);
         border: 1px solid var(--line);
         border-radius: 8px;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.52);
       }
 
       .station {
@@ -459,11 +528,17 @@
       .price {
         display: inline-block;
         margin-top: 8px;
-        padding: 6px 10px;
-        color: #fff;
-        background: var(--brick);
-        border-radius: 999px;
+        padding: 10px 14px;
+        color: #243139;
+        background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
+        border: 1px solid rgba(36, 49, 57, 0.18);
+        border-left: 4px solid #243139;
+        border-radius: 8px;
         font-weight: 700;
+        line-height: 1.55;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.72),
+          0 8px 18px rgba(22, 33, 47, 0.08);
       }
 
       .action-link,
@@ -474,18 +549,44 @@
         width: max-content;
         max-width: 100%;
         margin-top: 14px;
-        padding: 8px 12px;
-        color: #fff;
-        background: var(--teal);
+        padding: 8px 14px;
+        color: #fffdf8;
+        background: linear-gradient(180deg, #3b454b 0%, #202a30 100%);
         border-radius: 8px;
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.18),
+          0 10px 24px rgba(22, 33, 47, 0.18);
+        transition:
+          color 180ms ease,
+          box-shadow 180ms ease,
+          transform 180ms ease;
+      }
+
+      .action-link:hover,
+      .map-link:hover {
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.24),
+          0 14px 28px rgba(22, 33, 47, 0.24);
+        transform: translateY(-1px);
       }
 
       .map-link {
         width: 100%;
-        background: var(--brick);
+        color: #243139;
+        background: linear-gradient(180deg, #fffdf8 0%, #f2eee5 100%);
+        box-shadow:
+          inset 0 0 0 1px rgba(36, 49, 57, 0.18),
+          0 8px 18px rgba(22, 33, 47, 0.08);
+      }
+
+      .map-link:hover {
+        color: #111b20;
+        box-shadow:
+          inset 0 0 0 1px rgba(36, 49, 57, 0.3),
+          0 12px 24px rgba(22, 33, 47, 0.13);
       }
 
       .crosstalk-card .action-link + .action-link {
@@ -511,6 +612,18 @@
         position: relative;
         overflow: hidden;
         background: var(--sky);
+      }
+
+      .photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 54%,
+          rgba(0, 32, 31, 0.18) 100%
+        );
       }
 
       .photo-link {
@@ -550,7 +663,7 @@
 
       figcaption {
         margin-top: 8px;
-        color: #71808c;
+        color: var(--muted);
         font-size: 12px;
       }
 
@@ -559,7 +672,7 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         overflow: hidden;
-        background: #fff;
+        background: var(--surface);
       }
 
       .route-map img {
@@ -575,6 +688,10 @@
         border-radius: 8px;
         overflow: hidden;
         box-shadow: var(--shadow);
+        transition:
+          border-color 180ms ease,
+          box-shadow 180ms ease,
+          transform 180ms ease;
       }
 
       .video-frame {
@@ -631,6 +748,7 @@
         border-top: 1px solid var(--line);
         color: var(--ink);
         font-weight: 700;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
       }
 
       .nearby {
@@ -665,7 +783,8 @@
 
       .cost-table {
         width: 100%;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
         overflow: hidden;
         border-radius: 8px;
         background: var(--surface);
@@ -676,6 +795,8 @@
         overflow-x: auto;
         border-radius: 8px;
         -webkit-overflow-scrolling: touch;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
       }
 
       th,
@@ -688,7 +809,11 @@
 
       th {
         color: #fff;
-        background: var(--teal);
+        background: #005f5e;
+      }
+
+      tbody tr:nth-child(even) td {
+        background: rgba(233, 241, 239, 0.45);
       }
 
       tr:last-child td {
@@ -702,7 +827,7 @@
 
       .traffic-policy-card {
         margin: 0 0 20px;
-        background: #fff;
+        background: var(--surface);
       }
 
       .policy-note {
@@ -718,7 +843,8 @@
       .limit-table {
         width: 100%;
         min-width: 620px;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -733,7 +859,7 @@
 
       .limit-table th {
         color: #fff;
-        background: var(--teal);
+        background: #005f5e;
         font-weight: 800;
       }
 
@@ -767,7 +893,7 @@
       }
 
       .top-icon-shape {
-        fill: #292a36;
+        fill: #273238;
         fill-rule: evenodd;
       }
 
@@ -955,6 +1081,8 @@
         .limit-table-wrap {
           overflow: visible;
           border-radius: 0;
+          border: 0;
+          box-shadow: none;
         }
 
         .limit-table {
@@ -1050,8 +1178,8 @@
         }
 
         .back-to-hero svg {
-          width: 66px;
-          height: 59px;
+          width: 62px;
+          height: 56px;
         }
 
         th,
@@ -1093,6 +1221,35 @@
           min-height: 196px;
         }
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .route-card:hover,
+        .hotel-card:hover,
+        .spot-card:hover,
+        .food-card:hover,
+        .train-card:hover,
+        .crosstalk-card:hover,
+        .video-feature:hover,
+        .tip-box:hover,
+        .action-link:hover,
+        .map-link:hover,
+        .back-to-hero:hover svg,
+        .back-to-hero:focus-visible svg {
+          transform: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1131,7 +1288,6 @@
               title="相约上合，绽放“津”彩！天津夜景今起上新，“海河之夜”灯光秀将常态化点亮"
               loading="lazy"
               allow="fullscreen; picture-in-picture; encrypted-media"
-              allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
@@ -1883,14 +2039,6 @@
                   <td data-label="周三">2 和 7</td>
                   <td data-label="周四">3 和 8</td>
                   <td data-label="周五">4 和 9</td>
-                </tr>
-                <tr>
-                  <td>2026-12-28 至 2027-03-28</td>
-                  <td data-label="周一">4 和 9</td>
-                  <td data-label="周二">5 和 0</td>
-                  <td data-label="周三">1 和 6</td>
-                  <td data-label="周四">2 和 7</td>
-                  <td data-label="周五">3 和 8</td>
                 </tr>
               </tbody>
             </table>
